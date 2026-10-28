@@ -1,0 +1,42 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": { "v": 1, "at": "2026-10-28T14:23:00Z" },
+  "title": "Caelus",
+  "namespace": "Caelus",
+  "libraries": [{ "name": "react", "version": "18" }, { "name": "react-dom", "version": "18" }],
+  "sections": {},
+  "groups": ["Logos"],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "skydropx-logo.svg", "skydropx-logo-invertido.svg", "skydropx-isotipo.svg", "skydropx-isotipo-invertido.svg",
+        "soloenvios-logo.svg", "soloenvios-logo-invertido.svg", "soloenvios-isotipo.svg",
+        "shipkraken-logo.svg", "prontoenvios-logo.svg", "envios-internacionales-logo.svg", "myshiphub-logo.svg"
+      ],
+      "files": {
+        "skydropx-logo.svg": { "name": "skydropx-logo.svg", "blob": "78369848556025b4e3c9fbc84206c0c0", "size": 5873, "type": "image/svg+xml" },
+        "skydropx-logo-invertido.svg": { "name": "skydropx-logo-invertido.svg", "blob": "05ea0a04d33edd0b923652356b2ca8fe", "size": 5880, "type": "image/svg+xml" },
+        "skydropx-isotipo.svg": { "name": "skydropx-isotipo.svg", "blob": "6261e8cfff1156a68ffea3e7d2180d34", "size": 938, "type": "image/svg+xml" },
+        "skydropx-isotipo-invertido.svg": { "name": "skydropx-isotipo-invertido.svg", "blob": "f963944cbd0f6b04464e5b626a125176", "size": 937, "type": "image/svg+xml" },
+        "soloenvios-logo.svg": { "name": "soloenvios-logo.svg", "blob": "8339b2a991b5816daf1aa5889e606ec6", "size": 7483, "type": "image/svg+xml" },
+        "soloenvios-logo-invertido.svg": { "name": "soloenvios-logo-invertido.svg", "blob": "524702c06f6045dbd4b4fa176dbe68ce", "size": 7601, "type": "image/svg+xml" },
+        "soloenvios-isotipo.svg": { "name": "soloenvios-isotipo.svg", "blob": "7eb60cfb7179261a369cab355914d7e7", "size": 2578, "type": "image/svg+xml" },
+        "shipkraken-logo.svg": { "name": "shipkraken-logo.svg", "blob": "848b06b59a28e8fbc92e9a5950d64e9a", "size": 8711, "type": "image/svg+xml" },
+        "prontoenvios-logo.svg": { "name": "prontoenvios-logo.svg", "blob": "f14aca617a51ae6f0b5acabda4c6c3d9", "size": 5373, "type": "image/svg+xml" },
+        "envios-internacionales-logo.svg": { "name": "envios-internacionales-logo.svg", "blob": "7a6c6169ca81b5c52b60584555db9a10", "size": 11911, "type": "image/svg+xml" },
+        "myshiphub-logo.svg": { "name": "myshiphub-logo.svg", "blob": "a72fcc8485d19d8c4ffe9251045d2a82", "size": 6609, "type": "image/svg+xml" }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": { "readme": "project/README.md", "sections": [] },
+  "lastChange": {
+    "by": "Emmanuel Garcia",
+    "at": "2026-10-28T17:43:04Z",
+    "via": "Figma · Foundations / Tokens (Caelus) + Componentes (Caelus)",
+    "note": "Added the remaining 87 components from Componentes (Caelus): 90 in total."
+  }
+}

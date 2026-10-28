@@ -1,0 +1,22 @@
+<!-- @dsCard group="Cards" height=1037 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardHistorialEnvios, Badge } = window.Caelus;
+  const h = React.createElement;
+  const base = {
+    date: '20/abr/2024 4:00 pm', author: 'Dalia Martínez',
+    carrier: { name: 'Fedex', service: 'Standard Overnight' },
+    tracking: '123456789012345678', destination: { name: 'Ana María López Pérez', detail: '64000 - Centro Monterrey' },
+    eta: '2 días', price: '$150.00'
+  };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12 } },
+      h(CardHistorialEnvios, base),
+      h(CardHistorialEnvios, Object.assign({}, base, { type: 'con-convenio' })),
+      h(CardHistorialEnvios, Object.assign({}, base, { type: 'error' })),
+      h('div', { style: { maxWidth: 313 } }, h(CardHistorialEnvios, Object.assign({}, base, { breakpoint: 'mobile' })))
+    ));
+</script>

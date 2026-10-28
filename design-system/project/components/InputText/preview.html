@@ -1,0 +1,17 @@
+<!-- @dsCard group="Forms" height=372 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; padding: 16px; }
+</style>
+<script>
+  const { InputText } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputText, { label: 'Nombre del destinatario', labelInfo: 'Como aparece en su identificación', placeholder: 'Ej. Ana López', helperText: 'Lo usamos en la guía de envío.' }),
+      h(InputText, { label: 'Número de guía', defaultValue: '1Z999AA10123456784', valid: true, helperText: 'Guía encontrada.' }),
+      h(InputText, { label: 'Código postal', defaultValue: '0640', state: 'error', helperText: 'El código postal debe tener 5 dígitos.' }),
+      h(InputText, { label: 'Paquetería', placeholder: 'Asignada automáticamente', state: 'disabled', helperText: 'Se elige al cotizar.' }),
+      h(InputText, { label: 'Referencia', size: 'sm', placeholder: 'Pedido #1234', helperText: 'Tamaño small.' })));
+</script>

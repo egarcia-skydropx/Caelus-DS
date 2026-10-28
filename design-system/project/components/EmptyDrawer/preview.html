@@ -1,0 +1,20 @@
+<!-- @dsCard group="Drawer" height=470 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+</style>
+<script>
+  const { EmptyDrawer } = window.Caelus;
+  const h = React.createElement;
+  const art = h('svg', { viewBox: '0 0 128 128', width: 128, height: 128, fill: 'none', 'aria-hidden': 'true' },
+    h('path', { d: 'M28 48l36-16 36 16v44L64 108 28 92z', stroke: 'var(--core-theme-primary-primary-900)', strokeWidth: 2, strokeLinejoin: 'round' }),
+    h('path', { d: 'M28 48l36 16 36-16M64 64v44', stroke: 'var(--core-theme-primary-primary-900)', strokeWidth: 2 }),
+    h('circle', { cx: 98, cy: 94, r: 14, fill: 'var(--core-theme-primary-contrast-600)' }),
+    h('path', { d: 'M98 87v14M91 94h14', stroke: 'var(--core-text-invert-white)', strokeWidth: 3, strokeLinecap: 'round' }));
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16 } },
+      h(EmptyDrawer, { title: 'Recolecciones', onClose: () => {}, illustration: art,
+        heading: 'Aún no tienes recolecciones programadas',
+        description: 'Programa una recolección y la paquetería pasará por tus paquetes a tu domicilio.',
+        secondaryAction: { label: 'Cómo funciona' }, primaryAction: { label: 'Programar recolección' } })));
+</script>

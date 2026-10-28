@@ -1,0 +1,41 @@
+.cl-empty-drawer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 586px;
+  max-width: 100%;
+  min-height: 420px;
+  padding: var(--space-16);
+  background: var(--core-surface-gray-lighter-50);
+  border: var(--border-width-width-1) solid var(--core-border-secondary-gray200);
+  box-shadow: var(--shadow-xl);
+  font-family: var(--font-sans);
+  color: var(--core-text-primary-gray900);
+}
+.cl-empty-drawer__heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); }
+.cl-empty-drawer__title { margin: 0; font-size: 18px; line-height: 1.5; font-weight: 700; color: var(--core-text-primary-gray900); }
+.cl-empty-drawer__close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; padding: 0; border: 0; border-radius: var(--radius-4);
+  background: transparent; color: var(--core-icon-secondary-gray500); cursor: pointer;
+}
+.cl-empty-drawer__close:hover { background: var(--core-interactions-hover-gray100); }
+.cl-empty-drawer__close:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-empty-drawer__panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-16);
+  background: var(--core-surface-light-white);
+  border: var(--border-width-width-1) solid var(--core-theme-gray-lighter-200);
+  border-radius: var(--radius-6);
+}
+.cl-empty-drawer__state { display: flex; flex-direction: column; align-items: center; gap: var(--space-16); width: 100%; }
+.cl-empty-drawer__illustration { display: flex; justify-content: center; width: 128px; height: 128px; }
+.cl-empty-drawer__content { display: flex; flex-direction: column; align-items: center; gap: var(--space-16); width: 100%; }
+.cl-empty-drawer__text { display: flex; flex-direction: column; gap: var(--space-8); text-align: center; }
+.cl-empty-drawer__state-title { margin: 0; font-size: 16px; line-height: 1.5; font-weight: 600; color: var(--core-gray-900); }
+.cl-empty-drawer__state-desc { margin: 0; font-size: 14px; line-height: 1.5; color: var(--core-theme-gray-dark-700); }
+.cl-empty-drawer__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-16); }

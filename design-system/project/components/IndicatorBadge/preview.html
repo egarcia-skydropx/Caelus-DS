@@ -1,0 +1,14 @@
+<!-- @dsCard group="Indicators" height=110 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px; }
+</style>
+<script>
+  const { IndicatorBadge } = window.Caelus;
+  const h = React.createElement;
+  const items = [['green', 'Entregado'], ['blue', 'En tránsito'], ['yellow', 'Pendiente'], ['orange', 'Retrasado'],
+    ['red', 'Cancelado'], ['primary', 'Guía creada'], ['indigo', 'Recolectado'], ['gray', 'Borrador']];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'row' }, items.map(([c, t]) => h(IndicatorBadge, { key: c, color: c }, t))));
+</script>

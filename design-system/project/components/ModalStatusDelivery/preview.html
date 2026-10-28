@@ -1,0 +1,12 @@
+<!-- @dsCard group="Modals" height=795 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+</style>
+<script>
+  const { ModalStatusDelivery } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16 } },
+      h(ModalStatusDelivery, { inline: true, onClose: () => {} })));
+</script>

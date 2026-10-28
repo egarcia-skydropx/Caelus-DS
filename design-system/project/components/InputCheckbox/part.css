@@ -1,0 +1,43 @@
+.cl-input-checkbox { display: inline-flex; align-items: flex-start; gap: var(--space-8); font-family: var(--font-sans); }
+.cl-input-checkbox__control { display: inline-flex; flex: none; padding: 2px 0; }
+.cl-input-checkbox__box { position: relative; display: inline-flex; width: 16px; height: 16px; }
+.cl-input-checkbox__input {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: var(--border-width-width-1) solid var(--core-border-heavy-gray-400);
+  border-radius: var(--radius-4);
+  background: var(--core-surface-light-white);
+  cursor: pointer;
+}
+.cl-input-checkbox__mark {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: none;
+  pointer-events: none;
+  stroke: var(--core-icon-invert-white);
+}
+.cl-input-checkbox__input:checked,
+.cl-input-checkbox--partial .cl-input-checkbox__input {
+  border-color: var(--core-interactions-active-primary600);
+  background: var(--core-interactions-active-primary600);
+}
+.cl-input-checkbox__input:checked + .cl-input-checkbox__mark,
+.cl-input-checkbox--partial .cl-input-checkbox__mark { display: block; }
+.cl-input-checkbox__input:focus-visible { outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+
+.cl-input-checkbox__input:disabled { cursor: not-allowed; border-color: var(--core-border-primary-gray300); background: var(--core-theme-gray-lighter-200); }
+.cl-input-checkbox__input:disabled:checked,
+.cl-input-checkbox--partial .cl-input-checkbox__input:disabled {
+  border-color: var(--core-theme-primary-light-300);
+  background: var(--core-theme-primary-light-300);
+}
+
+.cl-input-checkbox__text { display: flex; flex-direction: column; }
+.cl-input-checkbox__label { font-size: 14px; line-height: 1.5; font-weight: 500; color: var(--core-text-primary-gray900); cursor: pointer; }
+.cl-input-checkbox__helper { font-size: 14px; line-height: 1.5; color: var(--core-text-secondary-gray500); }
+.cl-input-checkbox--disabled .cl-input-checkbox__label { color: var(--core-text-secondary-gray500); cursor: not-allowed; }

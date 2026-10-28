@@ -1,0 +1,20 @@
+<!-- @dsCard group="Forms" height=330 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputSearchSelect } = window.Caelus;
+  const h = React.createElement;
+  const clients = [
+    { value: 1, label: 'Mariana López · Celaya' }, { value: 2, label: 'Mario Hernández · León' },
+    { value: 3, label: 'Distribuidora Martínez' }, { value: 4, label: 'Mayoreo del Bajío' }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputSearchSelect, { label: 'Buscar cliente', placeholder: 'Buscar cliente', options: clients, defaultOpen: true, defaultInputValue: 'Ma' }),
+      h('div', { style: { display: 'grid', gap: 24 } },
+        h(InputSearchSelect, { label: 'Buscar cliente', placeholder: 'Buscar cliente', options: clients, defaultValue: 2, helperText: 'Escribe al menos 2 letras.' }),
+        h(InputSearchSelect, { label: 'Buscar cliente', size: 'sm', placeholder: 'Buscar cliente', options: clients, defaultValue: 1, error: 'Cliente sin dirección fiscal.' }))));
+</script>

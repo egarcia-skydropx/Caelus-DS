@@ -1,0 +1,16 @@
+<!-- @dsCard group="Avatars" height=276 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .col { display: grid; gap: 16px; padding: 16px; justify-items: start; }
+</style>
+<script>
+  const { AvatarText } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'col' },
+      h(AvatarText, { size: 'sm', initials: 'AR', alt: 'Ana Ruiz', title: 'Ana Ruiz', description: 'Creó 12 guías hoy' }),
+      h(AvatarText, { size: 'regular', initials: 'LM', alt: 'Luis Mendoza', title: 'Luis Mendoza', description: 'Operaciones · desde 2021' }),
+      h(AvatarText, { size: 'md', initials: 'CP', alt: 'Carla Pérez', title: 'Carla Pérez', description: 'Administradora de la cuenta' }),
+      h(AvatarText, { size: 'lg', initials: 'JG', alt: 'Jorge García', title: 'Jorge García', description: 'Se unió en agosto 2014' })));
+</script>

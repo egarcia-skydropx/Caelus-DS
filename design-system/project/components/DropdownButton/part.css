@@ -1,0 +1,23 @@
+/* ---------- DropdownButton ---------- */
+.cl-dropdown-button {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-sans);
+}
+.cl-dropdown-button--end { align-items: flex-end; }
+.cl-dropdown-button__trigger[aria-expanded="true"] {
+  border-color: var(--core-interactions-active-primary600);
+  box-shadow: inset 0 0 0 1px var(--core-interactions-active-primary600);
+  color: var(--core-text-contrast-primary600);
+}
+.cl-dropdown-button__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: 224px;
+  margin-top: var(--space-8);
+}
+.cl-dropdown-button--end .cl-dropdown-button__menu { left: auto; right: 0; }

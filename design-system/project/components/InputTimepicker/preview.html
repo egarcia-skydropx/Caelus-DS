@@ -1,0 +1,17 @@
+<!-- @dsCard group="Forms" height=360 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputTimepicker } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputTimepicker, { label: 'Seleccionar hora:', defaultValue: '12:00 am', defaultOpen: true }),
+      h('div', { style: { display: 'grid', gap: 16 } },
+        h(InputTimepicker, { label: 'Hora de recolección' }),
+        h(InputTimepicker, { label: 'Hora de recolección', defaultValue: '04:30 pm' }),
+        h(InputTimepicker, { label: 'Hora de recolección', disabled: true }))));
+</script>

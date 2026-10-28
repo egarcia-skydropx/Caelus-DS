@@ -1,0 +1,18 @@
+<!-- @dsCard group="Pantallas de error" height=640 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 16px; }
+  .ph { width: 280px; max-width: 100%; aspect-ratio: 691 / 655; border-radius: 16px; background: var(--core-surface-gray-light-100); border: 1px dashed var(--core-border-primary-gray300); box-sizing: border-box; }
+</style>
+<script>
+  const { ErrorScreen } = window.Caelus;
+  const h = React.createElement;
+  const ph = h('div', { className: 'ph' });
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(ErrorScreen, { code: '400', title: 'Solicitud incorrecta', illustration: ph, secondaryAction: { label: 'Ir a Skydropx' }, primaryAction: { label: 'Regresar' } },
+        'Lo sentimos, tu solicitud no se ha podido procesar.\nPor favor, actualiza la página.'),
+      h(ErrorScreen, { breakpoint: 'mobile', code: '500', title: 'Error del servidor', primaryAction: { label: 'Reintentar' } },
+        'No pudimos cargar tus envíos. Inténtalo de nuevo en unos minutos.')));
+</script>

@@ -1,0 +1,15 @@
+.cl-input-color { display: inline-flex; flex-direction: column; gap: var(--space-8); font-family: var(--font-sans); color: var(--core-text-primary-gray900); }
+.cl-input-color__label { font-size: 14px; line-height: 1.5; font-weight: 500; }
+.cl-input-color__picker { display: flex; align-items: center; gap: var(--space-8); }
+.cl-input-color__swatch { box-sizing: border-box; width: 37px; height: 37px; margin: 0; padding: 0; border: var(--border-width-width-1) solid var(--core-border-primary-gray300); border-radius: var(--radius-8); background: transparent; cursor: pointer; -webkit-appearance: none; appearance: none; }
+.cl-input-color__swatch::-webkit-color-swatch-wrapper { padding: 0; }
+.cl-input-color__swatch::-webkit-color-swatch { border: 0; border-radius: 7px; }
+.cl-input-color__swatch::-moz-color-swatch { border: 0; border-radius: 7px; }
+.cl-input-color__swatch:focus-visible { outline: none; border-color: var(--core-interactions-active-primary600); box-shadow: 0 0 0 1px var(--core-interactions-active-primary600); }
+.cl-input-color__swatch:disabled { cursor: not-allowed; }
+.cl-input-color__hex { display: flex; align-items: center; gap: var(--space-4); box-sizing: border-box; width: 123px; min-height: 37px; padding: calc(var(--space-8) - 1px) calc(var(--space-16) - 1px); border: var(--border-width-width-1) solid var(--core-border-primary-gray300); border-radius: var(--radius-8); background: var(--inputField-default-surface-white); font-size: 14px; line-height: 21px; }
+.cl-input-color__hex:hover { border-color: var(--core-border-heavy-gray-400); }
+.cl-input-color__hex:focus-within { border-color: var(--core-interactions-active-primary600); box-shadow: inset 0 0 0 1px var(--core-interactions-active-primary600); }
+.cl-input-color--disabled .cl-input-color__hex { background: var(--inputField-disabled-surface); color: var(--core-text-secondary-gray500); }
+.cl-input-color__hash { color: var(--core-text-secondary-gray500); }
+.cl-input-color__input { flex: 1 1 auto; width: 100%; min-width: 0; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-transform: uppercase; outline: none; }

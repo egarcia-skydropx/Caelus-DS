@@ -1,0 +1,28 @@
+<!-- @dsCard group="Layout & Menú" height=352 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-gray-lighter-50); }
+  .wrap { display: grid; gap: 16px; padding: 16px 0; }
+  .mob { max-width: 390px; }
+  .ph { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; }
+  .ph i { width: 24px; height: 24px; border-radius: 6px; background: currentColor; opacity: .6; }
+</style>
+<script>
+  const { Navbar } = window.Caelus;
+  const h = React.createElement;
+  const logo = (color, text) => h('span', { className: 'ph', style: { color } }, h('i'), text);
+  const ico = d => h('svg', { viewBox: '0 0 18 18', width: 20, height: 20, fill: 'none', stroke: 'currentColor', strokeWidth: 1.4, strokeLinecap: 'round', strokeLinejoin: 'round' }, h('path', { d }));
+  const flag = h('svg', { viewBox: '0 0 30 21' }, h('rect', { width: 10, height: 21, fill: 'var(--core-theme-green-base-500)' }), h('rect', { x: 10, width: 10, height: 21, fill: 'var(--core-surface-light-white)' }), h('rect', { x: 20, width: 10, height: 21, fill: 'var(--core-theme-red-contrast-600)' }));
+  const help = h('button', { key: 'h', type: 'button', className: 'cl-navbar__tool', 'aria-label': 'Ayuda' }, ico('M7 7a2 2 0 114 0c0 1.5-2 1.5-2 3M9 13h0M9 16A7 7 0 109 2a7 7 0 000 14z'));
+  const bell = h('button', { key: 'b', type: 'button', className: 'cl-navbar__tool', 'aria-label': 'Notificaciones' }, ico('M5 13V8a4 4 0 018 0v5l1.5 1.5h-11zM7.5 16h3'));
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(Navbar, { variant: 'skydropx', logo: logo('var(--core-text-invert-white)', 'Logo'), actions: [help, bell],
+        balance: { label: '$0.00 MXN', addLabel: 'Recargar saldo' }, country: { code: 'MX', flag, label: 'País: México' }, account: { initials: 'AG' } }),
+      h(Navbar, { variant: 'soloenvios', logo: logo('var(--core-text-primary-gray900)', 'Logo'), actions: [bell],
+        balance: { label: '$0.00 MXN', addLabel: 'Recargar saldo' }, account: { initials: 'AG' } }),
+      h(Navbar, { variant: 'msh', logo: logo('var(--core-text-invert-white)', 'Logo'), account: { initials: 'M' },
+        links: [{ id: 'c', label: 'Cotizador', active: true }, { id: 'm', label: 'Mis cuentas' }, { id: 'o', label: 'Órdenes' }] }),
+      h('div', { className: 'mob' }, h(Navbar, { variant: 'skydropx', type: 'mobile', onMenuClick: () => {}, logo: logo('var(--core-text-invert-white)', ''),
+        balance: { label: '$0.00 MXN', addLabel: 'Recargar saldo' }, country: { code: 'MX', flag, label: 'País: México' }, account: { initials: 'AG' } }))));
+</script>

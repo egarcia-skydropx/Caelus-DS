@@ -1,0 +1,27 @@
+<!-- @dsCard group="Cards" height=870 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardServiciosPaqueteria } = window.Caelus;
+  const h = React.createElement;
+  function Servicios() {
+    const [groups, setGroups] = React.useState([
+      { title: 'Nacionales', items: [
+        { id: 'express', label: 'Express', detail: '1 a 2 días hábiles', checked: true },
+        { id: 'terrestre', label: 'Terrestre', detail: '3 a 5 días hábiles', checked: true },
+        { id: 'plus', label: 'Plus', detail: '1 a 2 días hábiles', checked: true }] },
+      { title: 'Internacionales', items: [{ id: 'int', label: 'Internacional', detail: '1 a 2 días hábiles', checked: true }] }
+    ]);
+    const [dirty, setDirty] = React.useState(false);
+    const onChange = (item, checked) => { setDirty(true); setGroups(gs => gs.map(g => Object.assign({}, g, { items: g.items.map(i => i.id === item.id ? Object.assign({}, i, { checked }) : i) }))); };
+    return h(CardServiciosPaqueteria, { groups, onServiceChange: onChange, saveDisabled: !dirty });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12, maxWidth: 725 } },
+      h(CardServiciosPaqueteria, { variant: 'head-paqueteria', name: 'FedEx' }),
+      h(CardServiciosPaqueteria, { variant: 'convenio', convenio: { alias: 'Convenio FedEx Monterrey' } }),
+      h(Servicios)
+    ));
+</script>

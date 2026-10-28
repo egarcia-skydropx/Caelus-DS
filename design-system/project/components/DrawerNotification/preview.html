@@ -1,0 +1,18 @@
+<!-- @dsCard group="Drawer" height=560 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+</style>
+<script>
+  const { DrawerNotification } = window.Caelus;
+  const h = React.createElement;
+  const items = [
+    { id: 1, title: '¡Tu referido activó su cuenta!', message: 'Estás cerca de ganar créditos para tus envíos.', time: '10min', read: false },
+    { id: 2, title: 'Incidencia en tu guía #1234567890', message: 'FedEx reportó un problema en la entrega.', time: '1h', read: false },
+    { id: 3, title: '¡Ganaste créditos por referir!', message: 'Empieza a utilizarlos en tus próximos envíos.', time: '2h', read: true },
+    { id: 4, title: 'Recolección programada', message: 'Estafeta pasará mañana entre 9:00 y 18:00 h.', time: '1d', read: true }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16 } },
+      h(DrawerNotification, { notifications: items, onClose: () => {}, onMarkAllRead: () => {}, onSeeMore: () => {}, onNotificationClick: () => {} })));
+</script>

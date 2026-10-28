@@ -1,0 +1,11 @@
+/* InputAmount — field look comes from the shared .cl-input-text classes. */
+.cl-input-amount__control { gap: var(--space-4); }
+.cl-input-amount__prefix { display: inline-flex; flex: none; align-items: center; gap: var(--space-4); }
+.cl-input-amount__flag { display: inline-flex; width: 18px; height: 18px; overflow: hidden; border-radius: var(--radius-2); }
+.cl-input-amount__flag > svg { width: 100%; height: 100%; }
+.cl-input-amount__currency { font-size: 12px; line-height: 18px; color: var(--core-text-secondary-gray500); }
+.cl-input-amount__symbol { font-size: 14px; line-height: 18px; color: var(--core-text-secondary-gray500); }
+.cl-input-amount .cl-input-text__control--sm .cl-input-amount__symbol,
+.cl-input-amount .cl-input-text__control--sm .cl-input-amount__currency { line-height: 21px; }
+.cl-input-text--error .cl-input-amount__currency,
+.cl-input-text--error .cl-input-amount__symbol { color: var(--core-theme-red-dark-700); }

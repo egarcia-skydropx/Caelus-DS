@@ -1,0 +1,28 @@
+/* ---------- MenuBreakpoints ---------- */
+.cl-menu-breakpoints {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--core-surface-gray-lighter-50);
+  font-family: var(--font-sans);
+}
+.cl-menu-breakpoints__navbar { flex: none; position: relative; z-index: 2; }
+.cl-menu-breakpoints__container { position: relative; display: flex; flex: 1 1 auto; min-height: 0; }
+.cl-menu-breakpoints__menu { display: flex; flex: none; }
+.cl-menu-breakpoints__panel { display: flex; width: 256px; }
+.cl-menu-breakpoints__panel > * { flex: 1 1 auto; }
+.cl-menu-breakpoints__backdrop { display: none; }
+.cl-menu-breakpoints__body { flex: 1 1 auto; min-width: 0; box-sizing: border-box; padding: var(--space-16); }
+
+/* Overlay menu: below 1024px, or forced with layout="overlay" */
+.cl-menu-breakpoints--overlay .cl-menu-breakpoints__menu { display: none; position: absolute; inset: 0; z-index: 1; }
+.cl-menu-breakpoints--overlay.cl-menu-breakpoints--open .cl-menu-breakpoints__menu { display: flex; }
+.cl-menu-breakpoints--overlay .cl-menu-breakpoints__backdrop { display: block; position: absolute; inset: 0; background: var(--core-opacity-backdrop-30pct); }
+.cl-menu-breakpoints--overlay .cl-menu-breakpoints__panel { position: relative; max-width: 100%; box-shadow: var(--shadow-xl); }
+
+@media (max-width: 1023px) {
+  .cl-menu-breakpoints:not(.cl-menu-breakpoints--docked) .cl-menu-breakpoints__menu { display: none; position: absolute; inset: 0; z-index: 1; }
+  .cl-menu-breakpoints--open:not(.cl-menu-breakpoints--docked) .cl-menu-breakpoints__menu { display: flex; }
+  .cl-menu-breakpoints:not(.cl-menu-breakpoints--docked) .cl-menu-breakpoints__backdrop { display: block; position: absolute; inset: 0; background: var(--core-opacity-backdrop-30pct); }
+  .cl-menu-breakpoints:not(.cl-menu-breakpoints--docked) .cl-menu-breakpoints__panel { position: relative; max-width: 100%; box-shadow: var(--shadow-xl); }
+}

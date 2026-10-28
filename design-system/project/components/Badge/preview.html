@@ -1,0 +1,21 @@
+<!-- @dsCard group="Badges" height=150 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 16px; }
+</style>
+<script>
+  const { Badge } = window.Caelus;
+  const h = React.createElement;
+  const dot = h('svg', { viewBox: '0 0 16 16', fill: 'currentColor' }, h('circle', { cx: 8, cy: 8, r: 4 }));
+  const themes = ['gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink', 'primary', 'teal', 'orange', 'white'];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', null,
+      h('div', { className: 'row' }, themes.map(t => h(Badge, { key: t, theme: t }, t[0].toUpperCase() + t.slice(1)))),
+      h('div', { className: 'row' },
+        h(Badge, { theme: 'green', icon: dot }, 'Entregado'),
+        h(Badge, { theme: 'yellow', icon: dot, size: 'small' }, 'En tránsito'),
+        h(Badge, { theme: 'red', onRemove: () => {} }, 'Cancelado'),
+        h(Badge, { theme: 'primary', size: 'small', onRemove: () => {} }, 'Filtro'),
+        h(Badge, { theme: 'gray', size: 'small', icon: dot, 'aria-label': 'Pendiente' }))));
+</script>

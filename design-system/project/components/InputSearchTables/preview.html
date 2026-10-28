@@ -1,0 +1,14 @@
+<!-- @dsCard group="Forms" height=70 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputSearchTables } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputSearchTables, { placeholder: 'Buscar envíos' }),
+      h(InputSearchTables, { placeholder: 'Buscar envíos', defaultValue: 'Celaya' })));
+</script>

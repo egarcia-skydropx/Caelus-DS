@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=80 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputSearch } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputSearch, { placeholder: 'Buscar guías' }),
+      h(InputSearch, { placeholder: 'Buscar guías', defaultValue: 'MX-2025-00184' }),
+      h(InputSearch, { size: 'sm', placeholder: 'Buscar en facturas' })));
+</script>

@@ -1,0 +1,76 @@
+.cl-modal-ecommerce-integration__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  font-family: var(--font-sans);
+}
+.cl-modal-ecommerce-integration__brand { display: flex; align-items: center; gap: var(--space-8); }
+.cl-modal-ecommerce-integration__logo { display: inline-flex; width: 35px; height: 35px; flex: none; align-items: center; justify-content: center; }
+.cl-modal-ecommerce-integration__brand-text { display: flex; flex-direction: column; }
+.cl-modal-ecommerce-integration__name {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--core-text-primary-gray900);
+}
+.cl-modal-ecommerce-integration__category,
+.cl-modal-ecommerce-integration__hint {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--core-text-secondary-gray500);
+}
+.cl-modal-ecommerce-integration__instructions {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--core-text-primary-gray900);
+}
+.cl-modal-ecommerce-integration__hint {
+  padding: var(--space-8);
+  border-radius: var(--radius-8);
+  background: var(--core-surface-gray-lighter-50);
+}
+.cl-modal-ecommerce-integration__field { display: flex; flex-direction: column; gap: var(--space-8); }
+.cl-modal-ecommerce-integration__label {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--core-text-primary-gray900);
+}
+.cl-modal-ecommerce-integration__input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 42px;
+  padding: var(--space-12) var(--space-16);
+  border: var(--border-width-width-1) solid var(--core-border-primary-gray300);
+  border-radius: var(--radius-8);
+  background: var(--inputField-default-surface-white);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.25;
+  color: var(--core-text-primary-gray900);
+  text-overflow: ellipsis;
+}
+.cl-modal-ecommerce-integration__input::placeholder { color: var(--core-text-secondary-gray500); }
+.cl-modal-ecommerce-integration__input:focus-visible {
+  outline: none;
+  border-color: var(--core-interactions-active-primary600);
+  box-shadow: 0 0 0 1px var(--core-interactions-active-primary600);
+}
+.cl-modal-ecommerce-integration__input[aria-invalid="true"] {
+  border-color: var(--core-interactions-error-red500);
+  background: var(--inputField-error-surface-red50);
+}
+.cl-modal-ecommerce-integration__error { margin: 0; font-size: 14px; line-height: 1.5; color: var(--core-theme-red-contrast-600); }
+.cl-modal-ecommerce-integration__docs {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--core-text-primary-gray900);
+}
+.cl-modal-ecommerce-integration__docs a { color: var(--core-text-contrast-primary600); text-decoration: none; }
+.cl-modal-ecommerce-integration__docs a:hover { text-decoration: underline; }
+.cl-modal-ecommerce-integration__docs a:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }

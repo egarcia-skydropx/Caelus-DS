@@ -1,0 +1,33 @@
+<!-- @dsCard group="Dropdowns" height=320 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: flex; flex-wrap: wrap; gap: 24px; padding: 16px; align-items: flex-start; }
+  .wrap > * { width: 260px; }
+</style>
+<script>
+  const { Dropdown } = window.Caelus;
+  const h = React.createElement;
+  function Demo() {
+    const [value, setValue] = React.useState('fedex');
+    const opts = [
+      { type: 'title', id: 't1', label: 'Nacionales' },
+      { value: 'fedex', label: 'FedEx' },
+      { value: 'estafeta', label: 'Estafeta' },
+      { value: 'dhl', label: 'DHL', helper: 'Entrega al día siguiente' },
+      { type: 'separator', id: 's1' },
+      { type: 'title', id: 't2', label: 'Locales' },
+      { value: 'pronto', label: 'Pronto Envíos', disabled: true }
+    ].map(o => o.value ? Object.assign({}, o, { selected: o.value === value }) : o);
+    return h('div', { className: 'wrap' },
+      h(Dropdown, { 'aria-label': 'Paquetería', items: opts, maxHeight: 288, onSelect: it => setValue(it.value) }),
+      h(Dropdown, { role: 'menu', 'aria-label': 'Acciones de la guía', items: [
+        { id: 'a', label: 'Descargar guía' },
+        { id: 'b', label: 'Duplicar envío' },
+        { id: 'c', label: 'Ver rastreo' },
+        { type: 'separator', id: 's' },
+        { id: 'd', label: 'Cancelar envío', danger: true }
+      ] }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

@@ -1,0 +1,123 @@
+.cl-chat {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-12);
+  border: var(--border-width-width-1) solid var(--core-border-primary-gray300);
+  border-radius: var(--radius-8);
+  font-family: var(--font-sans);
+}
+.cl-chat__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-16); }
+.cl-chat__row { display: flex; align-items: center; gap: var(--space-32); }
+.cl-chat__row--client { justify-content: flex-end; }
+.cl-chat__group { display: flex; align-items: flex-start; gap: var(--space-16); min-width: 0; }
+.cl-chat__avatar {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--core-surface-gray-light-100);
+  color: var(--core-text-secondary-gray500);
+  font-size: 14px;
+  font-weight: 600;
+}
+.cl-chat__avatar > * { width: 100%; height: 100%; object-fit: cover; }
+.cl-chat__bubble {
+  box-sizing: border-box;
+  max-width: 312px;
+  min-width: 0;
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.cl-chat__row--agent .cl-chat__bubble {
+  border-radius: 0 12px 12px 12px;
+  background: var(--core-surface-gray-lighter-50);
+  color: var(--core-text-primary-gray900);
+  --cl-chat-muted: var(--core-text-secondary-gray500);
+  --cl-chat-inner: var(--core-surface-gray-light-100);
+  --cl-chat-link: var(--core-text-contrast-primary600);
+  --cl-chat-file: var(--dark);
+}
+.cl-chat__row--client .cl-chat__bubble {
+  border-radius: 12px 0 12px 12px;
+  background: var(--core-theme-primary-darkest-800);
+  color: var(--core-text-invert-white);
+  --cl-chat-muted: var(--core-text-invert-white);
+  --cl-chat-inner: var(--core-theme-primary-primary-900);
+  --cl-chat-link: var(--core-text-invert-white);
+  --cl-chat-file: var(--core-text-invert-white);
+}
+.cl-chat__header { display: flex; align-items: center; gap: var(--space-12); }
+.cl-chat__author { font-weight: 600; }
+.cl-chat__time, .cl-chat__status { color: var(--cl-chat-muted); font-weight: 400; }
+.cl-chat__text, .cl-chat__status { margin: 0; }
+.cl-chat__text { overflow-wrap: anywhere; }
+.cl-chat__file {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-8);
+  border-radius: 12px;
+  background: var(--cl-chat-inner);
+  color: var(--cl-chat-file);
+  text-decoration: none;
+}
+.cl-chat__file-info { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cl-chat__file-name { display: flex; align-items: center; gap: var(--space-8); font-weight: 500; }
+.cl-chat__file-meta { font-size: 12px; font-weight: 400; }
+.cl-chat__file-download { display: flex; }
+.cl-chat__preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-16);
+  border-radius: 12px;
+  background: var(--cl-chat-inner);
+  color: inherit;
+  text-decoration: none;
+}
+.cl-chat__preview-img { display: block; height: 128px; border-radius: 12px; overflow: hidden; }
+.cl-chat__preview-title { font-weight: 500; }
+.cl-chat__preview-domain { font-size: 12px; color: var(--cl-chat-muted); }
+.cl-chat__link { color: var(--cl-chat-link); overflow-wrap: anywhere; }
+.cl-chat__file:focus-visible, .cl-chat__preview:focus-visible, .cl-chat__link:focus-visible, .cl-chat__menu-item:focus-visible {
+  outline: var(--border-width-width-2) solid var(--core-text-contrast-primary600);
+  outline-offset: 2px;
+}
+.cl-chat__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.cl-chat__more { position: relative; flex: 0 0 auto; }
+.cl-chat__menu {
+  position: absolute;
+  top: 52px;
+  z-index: 10;
+  width: 224px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-8);
+  background: var(--core-surface-light-white);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.cl-chat__more--left .cl-chat__menu { right: 0; }
+.cl-chat__more--right .cl-chat__menu { left: 0; }
+.cl-chat__menu-item {
+  padding: var(--space-8) var(--space-16);
+  border: 0;
+  background: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--core-text-primary-gray900);
+  cursor: pointer;
+}
+.cl-chat__menu-item:hover { background: var(--core-surface-gray-lighter-50); }

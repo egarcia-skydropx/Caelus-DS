@@ -1,0 +1,59 @@
+/* ---------- Dropdown ---------- */
+.cl-dropdown {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 224px;
+  padding: var(--space-4) 0;
+  background: var(--dropdownMenu-surface);
+  border: var(--border-width-width-1) solid var(--core-border-secondary-gray200);
+  border-radius: var(--radius-8);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-sans);
+}
+.cl-dropdown--scroll { overflow-y: auto; }
+.cl-dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-8) var(--space-16);
+  border: 0;
+  background: transparent;
+  color: var(--dropdownMenu-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+}
+.cl-dropdown__item:hover:not([aria-disabled="true"]) { background: var(--core-interactions-hover-gray100); }
+.cl-dropdown__item:focus-visible {
+  outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600);
+  outline-offset: -2px;
+  background: var(--core-interactions-hover-gray100);
+}
+.cl-dropdown__item[aria-disabled="true"] { color: var(--core-text-secondary-gray500); cursor: not-allowed; }
+.cl-dropdown__item--danger { color: var(--core-theme-red-contrast-600); }
+.cl-dropdown__text { display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0; }
+.cl-dropdown__helper { color: var(--core-text-secondary-gray500); }
+.cl-dropdown__lead,
+.cl-dropdown__trail { display: inline-flex; flex: none; width: 18px; height: 18px; }
+.cl-dropdown__lead > svg,
+.cl-dropdown__trail > svg { width: 100%; height: 100%; }
+.cl-dropdown__lead--logo { width: 20px; height: 14px; }
+.cl-dropdown__lead--logo > svg,
+.cl-dropdown__lead--logo > img { width: 100%; height: 100%; object-fit: cover; }
+.cl-dropdown__trail { width: 14px; height: 14px; }
+.cl-dropdown__check { display: inline-flex; flex: none; color: var(--core-icon-contrast-primary600); }
+.cl-dropdown__item[aria-disabled="true"] .cl-dropdown__check { color: var(--core-icon-secondary-gray500); }
+.cl-dropdown__title {
+  padding: var(--space-8) var(--space-16);
+  color: var(--core-text-primary-gray900);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.cl-dropdown__separator { height: 1px; flex: none; background: var(--core-theme-gray-lighter-200); }

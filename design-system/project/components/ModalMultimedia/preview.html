@@ -1,0 +1,13 @@
+<!-- @dsCard group="Modals" height=590 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+</style>
+<script>
+  const { ModalMultimedia } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16 } },
+      h(ModalMultimedia, { inline: true, title: '¿Cómo funciona tu link de pedido?', onClose: () => {},
+        secondaryAction: { label: 'Ver después' }, primaryAction: { label: 'Crear mi link' } })));
+</script>

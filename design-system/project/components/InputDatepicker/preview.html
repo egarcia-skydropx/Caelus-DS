@@ -1,0 +1,17 @@
+<!-- @dsCard group="Forms" height=431 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputDatepicker } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputDatepicker, { label: 'Fecha de recolección', mode: 'range', defaultValue: [new Date(2025, 2, 19), new Date(2025, 2, 24)], today: new Date(2025, 2, 12), defaultOpen: true }),
+      h('div', { style: { display: 'grid', gap: 16, justifyItems: 'start' } },
+        h(InputDatepicker, { defaultValue: new Date(2025, 2, 19) }),
+        h(InputDatepicker, { displayText: 'Últimos 30 días' }),
+        h(InputDatepicker, { placeholder: 'Selecciona una fecha', disabled: true }))));
+</script>

@@ -1,0 +1,16 @@
+<!-- @dsCard group="Forms" height=140 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .row { display: flex; flex-wrap: wrap; gap: 24px; padding: 16px; }
+</style>
+<script>
+  const { InputCounter } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'row' },
+      h(InputCounter, { label: 'Paquetes', labelInfo: 'Paquetes por guía', defaultValue: 1, min: 1, max: 10, helperText: 'Máximo 10' }),
+      h(InputCounter, { label: 'Etiquetas', size: 'sm', defaultValue: 2, min: 0, helperText: 'Tamaño small' }),
+      h(InputCounter, { label: 'Paquetes', state: 'error', defaultValue: 0, helperText: 'Mínimo 1' }),
+      h(InputCounter, { label: 'Paquetes', state: 'disabled', defaultValue: 1, helperText: 'No editable' })));
+</script>

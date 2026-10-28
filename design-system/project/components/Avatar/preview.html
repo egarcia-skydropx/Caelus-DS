@@ -1,0 +1,25 @@
+<!-- @dsCard group="Avatars" height=352 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 12px 16px; }
+</style>
+<script>
+  const { Avatar } = window.Caelus;
+  const h = React.createElement;
+  const team = [
+    { initials: 'AR', alt: 'Ana Ruiz' }, { initials: 'LM', alt: 'Luis Mendoza' }, { initials: 'CP', alt: 'Carla Pérez' },
+    { initials: 'JG', alt: 'Jorge García' }, { initials: 'SV', alt: 'Sofía Vega' }, { initials: 'MT', alt: 'Mario Torres' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', null,
+      h('div', { className: 'row' },
+        ['sm', 'regular', 'md', 'lg', 'xl'].map(s => h(Avatar, { key: s, size: s, initials: 'AR', alt: 'Ana Ruiz' }))),
+      h('div', { className: 'row' },
+        h(Avatar, { type: 'rounded', size: 'md', initials: 'LM', alt: 'Luis Mendoza' }),
+        h(Avatar, { size: 'md', initials: 'CP', alt: 'Carla Pérez', dot: true, dotLabel: 'En línea' }),
+        h(Avatar, { type: 'rounded', size: 'lg', initials: 'JG', alt: 'Jorge García', dot: true, dotLabel: 'En línea' }),
+        h(Avatar, { size: 'sm', initials: 'SV', alt: 'Sofía Vega', onRemove: () => {}, removeLabel: 'Quitar a Sofía Vega' })),
+      h('div', { className: 'row' },
+        h(Avatar, { type: 'stacked', size: 'regular', avatars: team.slice(0, 4), 'aria-label': 'Equipo de operaciones' }),
+        h(Avatar, { type: 'stacked', size: 'md', avatars: team, max: 3, 'aria-label': 'Equipo asignado' }))));
+</script>

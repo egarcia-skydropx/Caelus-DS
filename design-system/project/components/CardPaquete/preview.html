@@ -1,0 +1,14 @@
+<!-- @dsCard group="Cards" height=200 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-light-white); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardPaquete } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12, maxWidth: 554 } },
+      h(CardPaquete, { tags: [{ label: '10 × 10 × 10 cm', icon: 'ruler' }, { label: '1 kg', icon: 'weight' }] }),
+      h(CardPaquete, { title: 'Paquete 2 de 3', defaultOpen: false, tags: [{ label: '20 × 20 × 20 cm', icon: 'ruler' }, { label: '2 kg', icon: 'weight' }] })
+    ));
+</script>

@@ -1,0 +1,42 @@
+.cl-progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  font-family: var(--font-sans);
+}
+.cl-progress-bar__labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--core-text-secondary-gray500);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.cl-progress-bar__track {
+  position: relative;
+  height: 6px;
+  overflow: hidden;
+  border-radius: var(--radius-2);
+  background: var(--core-theme-gray-lighter-200);
+}
+.cl-progress-bar__fill { position: absolute; top: 0; left: 0; bottom: 0; border-radius: var(--radius-2); }
+.cl-progress-bar--indeterminate .cl-progress-bar__fill {
+  width: 75%;
+  animation: cl-progress-bar-slide 1.4s ease-in-out infinite;
+}
+@keyframes cl-progress-bar-slide {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(134%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cl-progress-bar--indeterminate .cl-progress-bar__fill { animation: none; transform: none; }
+}
+.cl-progress-bar--primary .cl-progress-bar__fill { background: var(--core-theme-primary-contrast-600); }
+.cl-progress-bar--green .cl-progress-bar__fill { background: var(--core-theme-green-base-500); }
+.cl-progress-bar--dark .cl-progress-bar__fill { background: var(--core-theme-gray-darkest-800); }
+.cl-progress-bar--orange .cl-progress-bar__fill { background: var(--core-theme-orange-medium-400); }
+.cl-progress-bar--purple .cl-progress-bar__fill { background: var(--core-theme-purple-contrast-600); }
+.cl-progress-bar--yellow .cl-progress-bar__fill { background: var(--core-theme-yellow-light-300); }
+.cl-progress-bar--red .cl-progress-bar__fill { background: var(--core-theme-red-base-500); }
+.cl-progress-bar--indigo .cl-progress-bar__fill { background: var(--core-theme-indigo-contrast-600); }

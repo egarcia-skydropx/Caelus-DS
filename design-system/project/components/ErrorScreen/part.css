@@ -1,0 +1,57 @@
+.cl-error-screen {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--core-surface-gray-lighter-50);
+  font-family: var(--font-sans);
+}
+.cl-error-screen__inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: var(--space-16) 0;
+}
+.cl-error-screen--mobile { align-items: flex-start; }
+.cl-error-screen--mobile .cl-error-screen__inner { flex-direction: column; align-items: stretch; gap: var(--space-16); width: 100%; max-width: 352px; }
+.cl-error-screen__info {
+  flex: 0 1 430px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.cl-error-screen--mobile .cl-error-screen__info { flex: none; padding: 0 var(--space-16); }
+.cl-error-screen__code {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 800;
+  color: var(--core-text-contrast-primary600);
+}
+.cl-error-screen__text { display: flex; flex-direction: column; }
+.cl-error-screen__title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--core-text-primary-gray900);
+}
+.cl-error-screen__message {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--core-theme-gray-contrast-600);
+  white-space: pre-line;
+}
+.cl-error-screen__actions { display: flex; flex-wrap: wrap; gap: var(--space-16); }
+.cl-error-screen__illustration {
+  flex: 0 1 691px;
+  max-width: 691px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cl-error-screen--mobile .cl-error-screen__illustration { flex: none; max-width: 398px; width: 100%; align-self: center; }
+.cl-error-screen__illustration > * { max-width: 100%; }

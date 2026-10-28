@@ -1,0 +1,59 @@
+.cl-card-historial-envios {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-16);
+  background: var(--core-surface-light-white);
+  border-radius: var(--radius-8);
+  box-shadow: var(--shadow);
+  font-family: var(--font-sans);
+  color: var(--core-text-primary-gray900);
+  line-height: 1.5;
+  width: 100%;
+}
+.cl-card-historial-envios__head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-8); min-height: 24px; }
+.cl-card-historial-envios__head-left { display: flex; align-items: center; gap: var(--space-8); min-width: 0; }
+.cl-card-historial-envios__head-right { display: flex; align-items: center; gap: var(--space-8); }
+.cl-card-historial-envios__head-center { display: flex; justify-content: center; }
+.cl-card-historial-envios__check { width: 16px; height: 16px; margin: 0; accent-color: var(--core-interactions-active-primary600); }
+.cl-card-historial-envios__check:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-card-historial-envios__platform { display: inline-flex; width: 24px; height: 24px; flex: none; border-radius: var(--radius-4); background: var(--core-surface-gray-light-100); overflow: hidden; }
+.cl-card-historial-envios__meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-8); font-size: 12px; }
+.cl-card-historial-envios__date { color: var(--core-text-secondary-gray500); }
+.cl-card-historial-envios__author { color: var(--core-text-primary-gray900); font-weight: 500; }
+.cl-card-historial-envios__order { font-size: 14px; font-weight: 600; }
+.cl-card-historial-envios__auto { display: inline-flex; color: var(--core-theme-indigo-darkest-800); }
+.cl-card-historial-envios__warn { display: inline-flex; color: var(--core-theme-red-contrast-600); }
+.cl-card-historial-envios__div { border: 0; border-top: var(--border-width-width-1) solid var(--core-theme-gray-lighter-200); margin: 0 calc(-1 * var(--space-16)); }
+.cl-card-historial-envios__content { display: flex; justify-content: space-between; align-items: center; gap: var(--space-16); }
+.cl-card-historial-envios__field { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; flex: 0 1 200px; }
+.cl-card-historial-envios__field--carrier { gap: 0; }
+.cl-card-historial-envios__label { font-size: 12px; font-weight: 600; color: var(--core-theme-indigo-darkest-800); }
+.cl-card-historial-envios__carrier { display: flex; gap: var(--space-8); align-items: flex-start; }
+.cl-card-historial-envios__logo { width: 48px; height: 48px; flex: none; border-radius: var(--radius-4); background: var(--core-surface-gray-light-100); overflow: hidden; display: inline-flex; }
+.cl-card-historial-envios__stack { display: flex; flex-direction: column; min-width: 0; }
+.cl-card-historial-envios__value { font-size: 14px; font-weight: 600; color: var(--core-text-primary-gray900); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cl-card-historial-envios__sub { font-size: 14px; color: var(--core-text-secondary-gray500); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cl-card-historial-envios__muted { font-size: 14px; color: var(--core-text-minimal-gray400); }
+.cl-card-historial-envios__tracking { display: flex; align-items: center; gap: var(--space-4); min-width: 0; }
+.cl-card-historial-envios__link { font-size: 14px; color: var(--core-text-contrast-primary600); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 137px; }
+.cl-card-historial-envios__copy { display: inline-flex; padding: 0; border: 0; background: none; color: var(--core-text-secondary-gray500); cursor: pointer; border-radius: var(--radius-2); }
+.cl-card-historial-envios__copy:hover { color: var(--core-text-primary-gray900); }
+.cl-card-historial-envios__copy:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-card-historial-envios__price { font-size: 18px; font-weight: 600; }
+.cl-card-historial-envios__convenio { display: inline-flex; align-items: center; gap: var(--space-4); font-size: 14px; font-weight: 600; color: var(--convenio-palette-600); }
+.cl-card-historial-envios__actions { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-16); flex: none; }
+.cl-card-historial-envios__iconbtn { width: 37px; height: 37px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-8); border: var(--border-width-width-1) solid var(--core-border-primary-gray300); background: var(--buttons-secondary-default-surface); color: var(--core-theme-gray-darkest-800); cursor: pointer; }
+.cl-card-historial-envios__iconbtn:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-card-historial-envios__services { display: flex; align-items: center; gap: var(--space-8); font-size: 12px; flex-wrap: wrap; }
+.cl-card-historial-envios__services-title { font-weight: 600; padding-right: var(--space-8); border-right: var(--border-width-width-1) solid var(--core-theme-gray-light-300); }
+.cl-card-historial-envios__service-list { display: flex; flex-wrap: wrap; gap: var(--space-8); list-style: none; margin: 0; padding: 0; }
+.cl-card-historial-envios__service { display: inline-flex; align-items: center; gap: var(--space-8); }
+.cl-card-historial-envios__service-icon { width: 20px; height: 20px; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; background: var(--core-surface-green-light-100); color: var(--core-theme-green-contrast-600); }
+.cl-card-historial-envios__service--off .cl-card-historial-envios__service-icon { background: var(--core-surface-gray-light-100); color: var(--core-text-secondary-gray500); }
+.cl-card-historial-envios--mobile .cl-card-historial-envios__content { flex-direction: column; align-items: stretch; gap: var(--space-12); }
+.cl-card-historial-envios--mobile .cl-card-historial-envios__field { flex: none; }
+.cl-card-historial-envios__price-row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-8); }
+.cl-card-historial-envios--mobile .cl-card-historial-envios__head { align-items: flex-start; }
+.cl-card-historial-envios--mobile .cl-card-historial-envios__meta { flex-direction: column; gap: 0; }

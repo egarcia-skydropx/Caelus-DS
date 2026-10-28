@@ -1,0 +1,25 @@
+.cl-modal-multimedia .cl-modal-multimedia__content { padding: 0 15px; }
+.cl-modal-multimedia .cl-modal__header { border-bottom: 0; }
+.cl-modal-multimedia__media { display: flex; flex-direction: column; gap: var(--space-8); width: 100%; font-family: var(--font-sans); }
+.cl-modal-multimedia__media > video,
+.cl-modal-multimedia__media > iframe,
+.cl-modal-multimedia__media > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 465 / 387;
+  border: 0;
+  border-radius: var(--radius-8);
+  background: var(--core-theme-dark-black);
+}
+.cl-modal-multimedia__placeholder {
+  width: 100%;
+  aspect-ratio: 465 / 387;
+  border-radius: var(--radius-8);
+  background: linear-gradient(180deg, var(--core-gray-400) 0%, var(--core-theme-light-white) 50%, var(--core-gray-400) 100%);
+}
+.cl-modal-multimedia__caption {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--core-text-secondary-gray500);
+}

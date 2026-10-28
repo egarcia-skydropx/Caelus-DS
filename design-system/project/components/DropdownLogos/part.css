@@ -1,0 +1,8 @@
+/* ---------- DropdownLogos ---------- */
+.cl-dropdown-logos .cl-dropdown__item { min-height: 38px; }
+.cl-dropdown-logos .cl-dropdown__lead--logo {
+  width: 20px;
+  height: 14px;
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}

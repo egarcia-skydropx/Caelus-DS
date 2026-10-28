@@ -1,0 +1,18 @@
+<!-- @dsCard group="Empty states" height=808 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-gray-lighter-50); }
+  .wrap { padding: 16px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .ph { width: 100%; height: 100%; border-radius: 50%; background: var(--core-surface-gray-light-100); border: 1px dashed var(--core-border-primary-gray300); box-sizing: border-box; }
+</style>
+<script>
+  const { EmptyState } = window.Caelus;
+  const h = React.createElement;
+  const ph = h('div', { className: 'ph' });
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(EmptyState, { illustration: ph, title: 'Aún no tienes envíos', primaryAction: { label: 'Crear envío' }, secondaryAction: { label: 'Importar órdenes' } },
+        'Crea tu primera guía o importa tus órdenes para verlas aquí.'),
+      h(EmptyState, { device: 'mobile', illustration: ph, title: 'Sin resultados', primaryAction: { label: 'Limpiar filtros' }, secondaryAction: { label: 'Ver todo' } },
+        'No encontramos guías con esos filtros. Prueba con otra fecha o paquetería.')));
+</script>

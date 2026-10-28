@@ -1,0 +1,43 @@
+.cl-input-toggle { display: inline-flex; align-items: flex-start; gap: var(--space-8); font-family: var(--font-sans); }
+.cl-input-toggle__control { position: relative; display: inline-flex; flex: none; padding: var(--space-4) 0; }
+.cl-input-toggle__input {
+  position: absolute;
+  top: var(--space-4);
+  left: 0;
+  width: 40px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.cl-input-toggle__track {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 20px;
+  border-radius: 40px;
+  background: var(--core-theme-gray-medium-400);
+}
+.cl-input-toggle__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 40px;
+  background: var(--core-surface-light-white);
+}
+.cl-input-toggle__input:checked + .cl-input-toggle__track { background: var(--core-interactions-active-primary600); }
+.cl-input-toggle__input:checked + .cl-input-toggle__track .cl-input-toggle__thumb { left: 22px; }
+.cl-input-toggle__input:focus-visible + .cl-input-toggle__track { outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-input-toggle__input:disabled { cursor: not-allowed; }
+.cl-input-toggle__input:disabled + .cl-input-toggle__track { background: var(--core-theme-gray-light-300); }
+.cl-input-toggle__input:disabled + .cl-input-toggle__track .cl-input-toggle__thumb { background: var(--core-surface-gray-light-100); }
+.cl-input-toggle__input:disabled:checked + .cl-input-toggle__track { background: var(--core-theme-primary-light-300); }
+.cl-input-toggle__input:disabled:checked + .cl-input-toggle__track .cl-input-toggle__thumb { background: var(--core-surface-light-white); }
+
+.cl-input-toggle__text { display: flex; flex-direction: column; }
+.cl-input-toggle__label { font-size: 14px; line-height: 1.5; font-weight: 500; color: var(--core-text-primary-gray900); cursor: pointer; }
+.cl-input-toggle__helper { font-size: 14px; line-height: 1.5; color: var(--core-text-secondary-gray500); }
+.cl-input-toggle--disabled .cl-input-toggle__label { color: var(--core-text-secondary-gray500); cursor: not-allowed; }

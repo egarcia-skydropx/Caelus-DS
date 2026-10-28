@@ -1,0 +1,14 @@
+<!-- @dsCard group="Forms" height=250 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 24px; padding: 16px; max-width: 496px; }
+</style>
+<script>
+  const { InputPincode } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(InputPincode, { label: 'Tu código', defaultValue: '482', helperText: 'Por seguridad, nunca compartas este código.' }),
+      h(InputPincode, { label: 'Tu código', defaultValue: '482913', state: 'error', helperText: 'El código no coincide, verifícalo e intenta de nuevo.' })));
+</script>

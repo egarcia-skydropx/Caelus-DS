@@ -1,0 +1,18 @@
+<!-- @dsCard group="Toasts" height=549 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 16px; padding: 16px; }
+</style>
+<script>
+  const { Toast } = window.Caelus;
+  const h = React.createElement;
+  const close = () => {};
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(Toast, { type: 'success', title: 'Guía creada', date: '20/09/2023 a las 11:59', link: { label: 'Ir a mis envíos', href: '#' }, onClose: close }, 'Tu guía de FedEx ya está lista para imprimir.'),
+      h(Toast, { type: 'info', title: 'Recolección agendada', onClose: close }, 'La paquetería pasará mañana entre 9:00 y 14:00.'),
+      h(Toast, { type: 'warning', title: 'Saldo bajo', onClose: close }, 'Recarga para no detener tus envíos.'),
+      h(Toast, { type: 'danger', title: 'Error al guardar', onClose: close }, 'No pudimos guardar la dirección. Inténtalo de nuevo.'),
+      h(Toast, { type: 'info', title: 'Orden guardada', mobile: true, onClose: close })));
+</script>

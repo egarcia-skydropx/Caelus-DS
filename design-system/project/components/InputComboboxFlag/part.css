@@ -1,0 +1,3 @@
+.cl-input-combobox-flag .cl-input-combobox__icon { width: auto; height: auto; }
+.cl-input-combobox-flag__flag { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 28px; height: 20px; overflow: hidden; border-radius: var(--radius-2); background: var(--core-theme-gray-lighter-200); }
+.cl-input-combobox-flag__flag > img, .cl-input-combobox-flag__flag > svg { display: block; width: 100%; height: 100%; object-fit: cover; }

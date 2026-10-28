@@ -1,0 +1,17 @@
+<!-- @dsCard group="Forms" height=200 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; padding: 16px; }
+</style>
+<script>
+  const { InputCheckbox } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputCheckbox, { label: 'Incluir seguro', helperText: 'Cubre hasta el valor declarado.' }),
+      h(InputCheckbox, { label: 'Firma de recibido', helperText: 'La paquetería pide firma al entregar.', defaultChecked: true }),
+      h(InputCheckbox, { label: 'Seleccionar todas las guías', helperText: '3 de 8 seleccionadas.', indeterminate: true, readOnly: true }),
+      h(InputCheckbox, { label: 'Entrega en sábado', helperText: 'No disponible con esta paquetería.', disabled: true }),
+      h(InputCheckbox, { label: 'Rastreo por correo', helperText: 'Incluido en tu plan.', disabled: true, defaultChecked: true })));
+</script>

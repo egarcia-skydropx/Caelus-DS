@@ -1,0 +1,42 @@
+/* InputPhone — number field uses the shared .cl-input-text classes. */
+.cl-input-phone { display: flex; flex-direction: column; gap: var(--space-16); min-width: 0; font-family: var(--font-sans); }
+.cl-input-phone__helper { line-height: 1.5; }
+.cl-input-phone__group { display: flex; align-items: stretch; min-width: 0; }
+.cl-input-phone__country {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-8);
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: var(--space-12) var(--space-16);
+  border: var(--border-width-width-1) solid var(--selectPhone-default-border);
+  border-right-width: 0;
+  border-radius: var(--radius-8) 0 0 var(--radius-8);
+  background: var(--selectPhone-default-surface-gray50);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--selectPhone-default-placeholder);
+  cursor: pointer;
+}
+.cl-input-phone__country--sm { min-height: 37px; padding: var(--space-8) var(--space-16); }
+.cl-input-phone__country:focus-visible {
+  outline: 0;
+  background: var(--selectPhone-active-surface-gray50);
+  border-color: var(--selectPhone-active-border);
+  border-right-width: var(--border-width-width-1);
+  box-shadow: inset 0 0 0 var(--border-width-width-1) var(--selectPhone-active-border);
+}
+.cl-input-phone__flag { display: inline-flex; width: 20px; height: 14px; overflow: hidden; border-radius: var(--radius-2); }
+.cl-input-phone__flag > svg { width: 100%; height: 100%; }
+.cl-input-phone__chevron { display: inline-flex; width: 18px; height: 18px; color: var(--core-icon-secondary-gray500); }
+.cl-input-phone__control { flex: 1 1 auto; min-width: 0; border-radius: 0 var(--radius-8) var(--radius-8) 0; }
+
+.cl-input-phone--disabled .cl-input-phone__country {
+  background: var(--selectPhone-disabled-surface);
+  border-color: var(--selectPhone-disabled-border);
+  color: var(--selectPhone-disabled-placeholder);
+  cursor: not-allowed;
+}
+.cl-input-phone__action { width: 100%; }

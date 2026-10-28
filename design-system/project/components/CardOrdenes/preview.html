@@ -1,0 +1,24 @@
+<!-- @dsCard group="Cards" height=718 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardOrdenes } = window.Caelus;
+  const h = React.createElement;
+  const base = {
+    orderNumber: '#1234567', date: '20/abr/2024 4:00 pm', products: '6 artículos',
+    origin: { name: 'Regiopower', detail: '64000 - Centro' },
+    destination: { name: 'Ana María López Pérez', detail: '89349 - Lomas del Naranjal' },
+    pkg: { name: 'Caja de cartón', detail: '20.0x20.0x20.0 cm | 1 kg' },
+    carrier: { name: 'Fedex Standard Overnight', price: '$150.00', tracking: '123456789' },
+    shippingType: 'Envío estándar: Recíbelo entre 3-5 días hábiles con Protección $100'
+  };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12 } },
+      h(CardOrdenes, base),
+      h(CardOrdenes, Object.assign({}, base, { status: 'preparada' })),
+      h(CardOrdenes, Object.assign({}, base, { status: 'error-al-preparar', carrier: null })),
+      h(CardOrdenes, Object.assign({}, base, { payment: 'por-pagar', pkg: null, carrier: null, origin: { name: 'Regiopower' }, destination: { name: 'Ana María López Pérez' } }))
+    ));
+</script>

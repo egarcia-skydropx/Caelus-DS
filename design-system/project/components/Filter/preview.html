@@ -1,0 +1,30 @@
+<!-- @dsCard group="Filter" height=808 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { padding: 16px 16px 48px; }
+  .date { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--core-border-primary-gray300); border-radius: 8px; font-size: 14px; color: var(--core-text-primary-gray900); }
+</style>
+<script>
+  const { Filter } = window.Caelus;
+  const h = React.createElement;
+  function Demo() {
+    const [value, setValue] = React.useState({ carrier: ['fedex'], status: [] });
+    const [applied, setApplied] = React.useState([{ id: 'a', label: 'FedEx' }, { id: 'b', label: 'Entregado' }, { id: 'c', label: 'Jalisco' }]);
+    const [conv, setConv] = React.useState(false);
+    return h('div', { className: 'wrap' }, h(Filter, {
+      onClose: () => {}, onClear: () => { setApplied([]); setValue({}); },
+      applied, onRemoveApplied: id => setApplied(applied.filter(a => a.id !== id)),
+      date: h('span', { className: 'date' }, '19/mar/2025 - 24/mar/2025'),
+      categories: [
+        { id: 'carrier', label: 'Paquetería', options: [
+          { value: 'fedex', label: 'FedEx' }, { value: 'dhl', label: 'DHL' }, { value: 'estafeta', label: 'Estafeta' }] },
+        { id: 'status', label: 'Estatus del envío', options: [
+          { value: 'transit', label: 'En tránsito' }, { value: 'delivered', label: 'Entregado' }, { value: 'incident', label: 'Con incidencia' }] }
+      ],
+      value, onChange: (id, vals) => setValue(Object.assign({}, value, { [id]: vals })),
+      toggles: [{ label: 'Solo con convenio', helper: 'Muestra únicamente los envíos generados con tarifas de convenio.', checked: conv, onChange: setConv }]
+    }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

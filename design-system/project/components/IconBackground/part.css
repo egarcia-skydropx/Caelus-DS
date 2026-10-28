@@ -1,0 +1,38 @@
+.cl-icon-background {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.cl-icon-background--circle { border-radius: var(--radius-full); }
+.cl-icon-background--square { border-radius: var(--radius-8); }
+.cl-icon-background__icon { display: inline-flex; }
+.cl-icon-background__icon > svg { width: 100%; height: 100%; }
+
+.cl-icon-background--xxs { width: 20px; height: 20px; }
+.cl-icon-background--xxs .cl-icon-background__icon { width: 16px; height: 16px; }
+.cl-icon-background--xs { width: var(--icon-shapes-xs); height: var(--icon-shapes-xs); }
+.cl-icon-background--xs .cl-icon-background__icon { width: 20px; height: 20px; }
+.cl-icon-background--sm { width: var(--icon-shapes-default); height: var(--icon-shapes-default); }
+.cl-icon-background--sm .cl-icon-background__icon { width: 20px; height: 20px; }
+.cl-icon-background--md { width: var(--icon-shapes-lg); height: var(--icon-shapes-lg); }
+.cl-icon-background--md .cl-icon-background__icon { width: 28px; height: 28px; }
+.cl-icon-background--lg { width: var(--icon-shapes-xl); height: var(--icon-shapes-xl); }
+.cl-icon-background--lg .cl-icon-background__icon { width: 48px; height: 48px; }
+.cl-icon-background--xl { width: var(--icon-shapes-xxl); height: var(--icon-shapes-xxl); }
+.cl-icon-background--xl .cl-icon-background__icon { width: 64px; height: 64px; }
+
+.cl-icon-background--white { background: var(--core-surface-light-white); color: var(--core-theme-gray-gray-900); }
+.cl-icon-background--dark { background: var(--core-theme-gray-gray-900); color: var(--core-theme-light-white); }
+.cl-icon-background--green { background: var(--core-surface-green-light-100); color: var(--core-theme-green-base-500); }
+.cl-icon-background--red { background: var(--core-surface-red-light-100); color: var(--core-theme-red-contrast-600); }
+.cl-icon-background--blue { background: var(--core-surface-blue-light-100); color: var(--core-theme-blue-contrast-600); }
+.cl-icon-background--yellow { background: var(--core-surface-yellow-light-100); color: var(--core-theme-yellow-base-500); }
+.cl-icon-background--orange { background: var(--core-surface-orange-light-100); color: var(--core-theme-orange-base-500); }
+.cl-icon-background--purple { background: var(--core-surface-purple-light-100); color: var(--core-theme-purple-contrast-600); }
+.cl-icon-background--gray { background: var(--core-surface-gray-light-100); color: var(--core-theme-gray-base-500); }
+.cl-icon-background--teal { background: var(--core-surface-teal-light-100); color: var(--core-theme-teal-base-500); }
+.cl-icon-background--secondary { background: var(--core-surface-secondary-light-100); color: var(--core-theme-secondary-contrast-600); }
+.cl-icon-background--indigo { background: var(--core-surface-indigo-light-100); color: var(--core-theme-indigo-darkest-800); }
+.cl-icon-background--pink { background: var(--core-surface-pink-light-100); color: var(--core-theme-pink-base-500); }

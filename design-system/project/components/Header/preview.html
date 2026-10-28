@@ -1,0 +1,30 @@
+<!-- @dsCard group="Headers" height=465 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: grid; gap: 24px; }
+  .mob { max-width: 384px; border-top: 1px solid var(--core-border-secondary-gray200); }
+</style>
+<script>
+  const { Header, Button, TabFilter } = window.Caelus;
+  const h = React.createElement;
+  const ico = d => h('svg', { viewBox: '0 0 18 18', fill: 'none', stroke: 'currentColor', strokeWidth: 1.4, strokeLinecap: 'round', strokeLinejoin: 'round' }, h('path', { d }));
+  const bars = ico('M3 4.5h12M3 9h12M3 13.5h12');
+  function Demo(p) {
+    const [q, setQ] = React.useState('');
+    const [tab, setTab] = React.useState('todos');
+    return h(Header, {
+      breakpoint: p.bp,
+      title: 'Mis envíos',
+      description: 'Sigue de cerca tus envíos, consulta y gestiona cada detalle.',
+      actions: p.bp === 'desktop' ? h(Button, { type: 'secondary', size: 'xs', leftIcon: ico('M9 4v10M4 9h10') }, 'Envío externo') : null,
+      iconActions: h(Button, { type: 'secondary', shape: 'circle', size: 'sm', icon: ico('M3 4h5a2 2 0 012 2v9a2 2 0 00-2-2H3zM15 4h-5'), 'aria-label': 'Ver guía de uso' }),
+      tabs: TabFilter ? h(TabFilter, { 'aria-label': 'Filtrar envíos', value: tab, onChange: setTab, tabs: [
+        { id: 'todos', label: 'Todos', icon: bars }, { id: 'sin', label: 'Sin descargar guía', icon: bars }, { id: 'inc', label: 'Con incidencia', icon: bars }] }) : null,
+      search: { value: q, onChange: setQ, placeholder: 'Busca por nombre o número de rastreo' },
+      onFilterClick: () => {}
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' }, h(Demo, { bp: 'desktop' }), h('div', { className: 'mob' }, h(Demo, { bp: 'mobile' }))));
+</script>

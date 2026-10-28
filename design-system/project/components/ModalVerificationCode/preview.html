@@ -1,0 +1,15 @@
+<!-- @dsCard group="Modals" height=420 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; gap: 16px; padding: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start; }
+  .card { border: 1px solid var(--core-border-secondary-gray200); border-radius: var(--radius-8); }
+</style>
+<script>
+  const { ModalVerificationCode } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h('div', { className: 'card' }, h(ModalVerificationCode, { variant: 'code', destination: 'julian.anaya@skydropx.com' })),
+      h('div', { className: 'card' }, h(ModalVerificationCode, { variant: 'code-sms', destination: '...6600', defaultValue: '12', error: 'El código no coincide. Revisa el SMS e inténtalo de nuevo.' }))));
+</script>

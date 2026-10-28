@@ -1,0 +1,30 @@
+.cl-indicator-badge {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 2px var(--space-10);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.cl-indicator-badge__dot { width: 12px; height: 12px; flex: none; border-radius: var(--radius-full); }
+.cl-indicator-badge--blue { background: var(--indicators-blue-surface-100); color: var(--indicators-blue-text-700); }
+.cl-indicator-badge--blue .cl-indicator-badge__dot { background: var(--indicators-blue-indicator-500); }
+.cl-indicator-badge--gray { background: var(--indicators-gray-surface-100); color: var(--indicators-gray-text-500); }
+.cl-indicator-badge--gray .cl-indicator-badge__dot { background: var(--indicators-gray-indicator-400); }
+.cl-indicator-badge--green { background: var(--indicators-green-surface-100); color: var(--indicators-green-text-800); }
+.cl-indicator-badge--green .cl-indicator-badge__dot { background: var(--indicators-green-indicator-500); }
+.cl-indicator-badge--indigo { background: var(--indicators-indigo-surface-100); color: var(--indicators-indigo-text-800); }
+.cl-indicator-badge--indigo .cl-indicator-badge__dot { background: var(--indicators-indigo-indicator-500); }
+.cl-indicator-badge--orange { background: var(--indicators-orange-surface-100); color: var(--indicators-orange-text-800); }
+.cl-indicator-badge--orange .cl-indicator-badge__dot { background: var(--indicators-orange-indicator-400); }
+.cl-indicator-badge--primary { background: var(--indicators-primary-surface-100); color: var(--indicators-primary-text-800); }
+.cl-indicator-badge--primary .cl-indicator-badge__dot { background: var(--indicators-primary-indicator-500); }
+.cl-indicator-badge--red { background: var(--indicators-red-surface-100); color: var(--indicators-red-text-800); }
+.cl-indicator-badge--red .cl-indicator-badge__dot { background: var(--indicators-red-indicator-500); }
+.cl-indicator-badge--yellow { background: var(--indicators-yellow-surface-100); color: var(--indicators-yellow-text-800); }
+.cl-indicator-badge--yellow .cl-indicator-badge__dot { background: var(--indicators-yellow-indicator-300); }

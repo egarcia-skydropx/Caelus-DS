@@ -1,0 +1,17 @@
+<!-- @dsCard group="Cards" height=500 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { TablaPaqueterias } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16 } },
+      h(TablaPaqueterias, { items: [
+        { id: 'fedex', name: 'FedEx', convenioState: 'conectado' },
+        { id: 'dhl', name: 'DHL', convenioState: 'conectar' },
+        { id: 'estafeta', name: 'Estafeta', convenioState: 'error', statusLabel: 'Desactivada', statusTheme: 'gray', servicesActive: 0 }
+      ] })
+    ));
+</script>

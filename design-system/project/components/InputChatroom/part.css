@@ -1,0 +1,62 @@
+.cl-input-chatroom {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  box-sizing: border-box;
+  padding: var(--space-8) var(--space-12);
+  border-radius: 12px;
+  background: var(--core-surface-gray-lighter-50);
+  font-family: var(--font-sans);
+}
+.cl-input-chatroom__icon,
+.cl-input-chatroom__send {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-4);
+  background: transparent;
+  cursor: pointer;
+}
+.cl-input-chatroom__icon { width: 20px; height: 20px; color: var(--core-icon-secondary-gray500); }
+.cl-input-chatroom__send { width: 24px; height: 24px; color: var(--core-icon-contrast-primary600); }
+.cl-input-chatroom__icon:focus-visible,
+.cl-input-chatroom__send:focus-visible { outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-input-chatroom__icon:disabled,
+.cl-input-chatroom__send:disabled { cursor: not-allowed; }
+.cl-input-chatroom__send:disabled { color: var(--core-icon-secondary-gray500); }
+
+.cl-input-chatroom__field {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: var(--space-10) var(--space-12);
+  border: var(--border-width-width-1) solid var(--core-border-primary-gray300);
+  border-radius: var(--radius-8);
+  background: var(--core-surface-light-white);
+}
+.cl-input-chatroom__field:focus-within {
+  border-color: var(--core-interactions-active-primary600);
+  background: var(--core-surface-gray-lighter-50);
+}
+.cl-input-chatroom__native {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-height: 120px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  resize: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--core-text-primary-gray900);
+}
+.cl-input-chatroom__native::placeholder { color: var(--core-text-secondary-gray500); opacity: 1; }
+.cl-input-chatroom--disabled .cl-input-chatroom__field { background: var(--inputField-disabled-surface); }
+.cl-input-chatroom--disabled .cl-input-chatroom__native { color: var(--core-text-secondary-gray500); cursor: not-allowed; }

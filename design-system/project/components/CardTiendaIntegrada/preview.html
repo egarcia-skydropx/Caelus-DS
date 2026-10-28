@@ -1,0 +1,19 @@
+<!-- @dsCard group="Cards" height=538 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardTiendaIntegrada } = window.Caelus;
+  const h = React.createElement;
+  const base = { storeName: 'Mi tiendita', url: 'mitiendita.myshopify.com', href: '#', connectedAt: 'Conectada el 04 de octubre de 2023' };
+  const x = o => Object.assign({}, base, o);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12, maxWidth: 773 } },
+      h(CardTiendaIntegrada, base),
+      h(CardTiendaIntegrada, x({ status: 'desactivada', ecommerce: 'woocommerce', url: 'mitiendita.com' })),
+      h(CardTiendaIntegrada, x({ status: 'actualizar-permisos' })),
+      h(CardTiendaIntegrada, x({ ecommerce: 'api-key', url: 'ck_038e961d72a8a****************' })),
+      h('div', { style: { maxWidth: 294 } }, h(CardTiendaIntegrada, x({ version: 'mobile' })))
+    ));
+</script>

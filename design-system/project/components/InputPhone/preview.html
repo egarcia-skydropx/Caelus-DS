@@ -1,0 +1,21 @@
+<!-- @dsCard group="Forms" height=430 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 348px)); gap: 24px; padding: 16px; }
+</style>
+<script>
+  const { InputPhone } = window.Caelus;
+  const h = React.createElement;
+  const flag = h('svg', { viewBox: '0 0 3 2' },
+    h('rect', { width: 1, height: 2, style: { fill: 'var(--core-theme-green-base-500)' } }),
+    h('rect', { x: 1, width: 1, height: 2, style: { fill: 'var(--core-surface-light-white)' } }),
+    h('rect', { x: 2, width: 1, height: 2, style: { fill: 'var(--core-theme-red-base-500)' } }));
+  const help = 'Ingresa los 10 dígitos de tu celular, sin el código de país.';
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputPhone, { label: 'Celular*', flag, helperText: help, actionLabel: 'Enviar código' }),
+      h(InputPhone, { label: 'Celular*', flag, defaultValue: '55 5123 4567', valid: true, helperText: help, actionLabel: 'Enviar código' }),
+      h(InputPhone, { label: 'Celular*', flag, defaultValue: '55 5123', state: 'error', helperText: 'El número debe tener 10 dígitos.', size: 'sm' }),
+      h(InputPhone, { label: 'Celular*', flag, state: 'disabled', helperText: help, size: 'sm' })));
+</script>

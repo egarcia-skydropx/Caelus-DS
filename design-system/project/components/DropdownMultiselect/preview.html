@@ -1,0 +1,30 @@
+<!-- @dsCard group="Dropdowns" height=440 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 16px; align-items: start; }
+</style>
+<script>
+  const { DropdownMultiselect } = window.Caelus;
+  const h = React.createElement;
+  function Demo() {
+    const [a, setA] = React.useState(['fedex']);
+    const [b, setB] = React.useState(['shopify-1']);
+    return h('div', { className: 'wrap' },
+      h(DropdownMultiselect, { 'aria-label': 'Paqueterías', value: a, onChange: setA, maxHeight: 220, options: [
+        { value: 'fedex', label: 'FedEx', helper: 'Nacional y express' },
+        { value: 'dhl', label: 'DHL', helper: 'Entrega al día siguiente' },
+        { value: 'estafeta', label: 'Estafeta' },
+        { value: 'ups', label: 'UPS' },
+        { value: 'redpack', label: 'Redpack', disabled: true }
+      ] }),
+      h(DropdownMultiselect, { 'aria-label': 'Tiendas', value: b, onChange: setB, searchPlaceholder: 'Buscar tienda', options: [
+        { value: 'shopify', label: 'Shopify', defaultExpanded: true, children: [
+          { value: 'shopify-1', label: 'Tienda Centro', helper: 'tiendacentro.mx' },
+          { value: 'shopify-2', label: 'Tienda Norte', helper: 'tiendanorte.mx' }
+        ] },
+        { value: 'woo', label: 'WooCommerce', children: [{ value: 'woo-1', label: 'Mi tienda' }] }
+      ] }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

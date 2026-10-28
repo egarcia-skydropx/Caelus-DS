@@ -1,0 +1,22 @@
+<!-- @dsCard group="Cards" height=757 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardPaqueteriasCotizador } = window.Caelus;
+  const h = React.createElement;
+  const base = {
+    carrier: { name: 'Fedex', service: 'Standard Overnight' },
+    pickup: { title: 'Llevar a sucursal', detail: 'Recolección: mínimo 5 paquetes', tooltip: 'Lleva tus paquetes a una sucursal de la paquetería.' },
+    eta: '2 días', price: '$150.00'
+  };
+  const x = o => Object.assign({}, base, o);
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12 } },
+      h(CardPaqueteriasCotizador, base),
+      h(CardPaqueteriasCotizador, x({ type: 'convenio', convenioAlias: 'Alias convenio' })),
+      h(CardPaqueteriasCotizador, x({ type: 'cargos-extra', price: '$150.00*', priceNote: '*Incluye cargos extra', automation: true, message: 'Cargo extra: Zona extendida +$1.000 | Cruce en ferri +$2.000' })),
+      h(CardPaqueteriasCotizador, x({ type: 'no-disponible', price: '$0.00', message: 'No disponible: texto complementario' }))
+    ));
+</script>

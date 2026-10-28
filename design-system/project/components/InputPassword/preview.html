@@ -1,0 +1,21 @@
+<!-- @dsCard group="Forms" height=415 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 24px; padding: 16px; max-width: 512px; }
+</style>
+<script>
+  const { InputPassword } = window.Caelus;
+  const h = React.createElement;
+  const reqs = [
+    { label: 'Mínimo 8 caracteres', met: true },
+    { label: '1 minúscula y mayúscula', met: false },
+    { label: '1 número', met: false },
+    { label: '1 símbolo (ej: $-_()/.,)', met: true }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(InputPassword, { label: 'Contraseña*' }),
+      h(InputPassword, { label: 'Nueva contraseña*', defaultValue: 'envios$2026', autoComplete: 'new-password', requirements: reqs }),
+      h(InputPassword, { label: 'Contraseña*', state: 'error', helperText: 'Este campo es obligatorio.' })));
+</script>

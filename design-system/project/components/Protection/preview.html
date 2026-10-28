@@ -1,0 +1,15 @@
+<!-- @dsCard group="Drawer" height=430 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { padding: 16px; border-top: 1px solid var(--core-border-secondary-gray200); margin: 16px; padding: 0; }
+</style>
+<script>
+  const { Protection } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(Protection, { type: 'sos', mode: 'default', policiesHref: '#' }),
+      h(Protection, { type: 'se', mode: 'activada', defaultDeclaredValue: '2,500.00', policiesHref: '#' }),
+      h(Protection, { type: 'internacional', mode: 'automatica', defaultDeclaredValue: '2,500.00', policiesHref: '#', settingsHref: '#' })));
+</script>

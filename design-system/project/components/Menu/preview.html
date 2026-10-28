@@ -1,0 +1,36 @@
+<!-- @dsCard group="Layout & Menú" height=620 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-gray-lighter-50); }
+  .wrap { display: flex; gap: 16px; padding: 16px; overflow-x: auto; align-items: stretch; height: 588px; box-sizing: border-box; }
+  .wrap > * { flex: none; border-radius: 8px; }
+</style>
+<script>
+  const { Menu } = window.Caelus;
+  const h = React.createElement;
+  const ico = d => h('svg', { viewBox: '0 0 18 18', fill: 'none', stroke: 'currentColor', strokeWidth: 1.4, strokeLinecap: 'round', strokeLinejoin: 'round' }, h('path', { d }));
+  const home = ico('M3 8l6-5 6 5v7H3zM7 15v-4h4v4');
+  const box = ico('M3 5.5L9 3l6 2.5v7L9 15l-6-2.5zM3 5.5L9 8l6-2.5M9 8v7');
+  const truck = ico('M2 5h9v7H2zM11 8h3l2 2v2h-5M5 14a1 1 0 100-.01M13 14a1 1 0 100-.01');
+  const plug = ico('M7 2v4M11 2v4M5 6h8v3a4 4 0 01-8 0zM9 13v3');
+  const plus = ico('M9 4v10M4 9h10');
+  const out = ico('M7 4H4v10h3m4-8l3 3-3 3m3-3H7');
+  const items = [
+    { id: 'inicio', label: 'Inicio', icon: home },
+    { type: 'label', id: 'l1', label: 'Creación' },
+    { id: 'cotizar', type: 'cta', label: 'Cotizar y crear', icon: plus },
+    { id: 'crear', label: 'Crear envío', icon: box },
+    { type: 'label', id: 'l2', label: 'Gestión' },
+    { id: 'envios', label: 'Mis envíos', icon: truck, active: true },
+    { type: 'separator', id: 's1' },
+    { id: 'conexiones', label: 'Conexiones', icon: plug, children: [
+      { id: 'tiendas', label: 'Tiendas en línea' }, { id: 'api', label: 'API' }, { id: 'webhooks', label: 'Webhooks' }] }
+  ];
+  const footer = [{ id: 'gi', label: 'Gestión interna', icon: box, trailing: out }];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(Menu, { variant: 'skydropx', items, footer }),
+      h(Menu, { variant: 'soloenvios', items: [{ id: 'n', type: 'cta', label: 'Nuevo envío', icon: plus }].concat(items.slice(4)), footer }),
+      h(Menu, { variant: 'msh', items: [{ id: 'c', label: 'Cotizador', icon: home }, { id: 'm', label: 'Mis cuentas', icon: truck },
+        { id: 'i', label: 'Integraciones', icon: plug, defaultExpanded: true, children: [{ id: 't', label: 'Tiendas', active: true }] }, { id: 'o', label: 'Órdenes', icon: box }] })));
+</script>

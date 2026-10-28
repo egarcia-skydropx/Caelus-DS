@@ -1,0 +1,85 @@
+/* InputText — and the shared field layer (label row, control box, helper) used by the Forms inputs. */
+.cl-input-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+  font-family: var(--font-sans);
+}
+.cl-input-text__label-row { display: flex; align-items: center; gap: var(--space-8); }
+.cl-input-text__label {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--core-text-primary-gray900);
+}
+.cl-input-text__label-icon { display: inline-flex; width: 18px; height: 18px; color: var(--core-icon-secondary-gray500); }
+.cl-input-text__helper {
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--core-text-secondary-gray500);
+}
+
+.cl-input-text__control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: var(--space-12) var(--space-16);
+  border: var(--border-width-width-1) solid var(--core-border-primary-gray300);
+  border-radius: var(--radius-8);
+  background: var(--inputField-default-surface-white);
+}
+.cl-input-text__control--sm { min-height: 37px; padding: var(--space-8) var(--space-16); }
+.cl-input-text__control:focus-within {
+  background: var(--inputField-active-surface-gray50);
+  border-color: var(--core-interactions-active-primary600);
+  box-shadow: inset 0 0 0 var(--border-width-width-1) var(--core-interactions-active-primary600);
+}
+
+.cl-input-text__native {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--core-text-primary-gray900);
+}
+.cl-input-text__control--sm .cl-input-text__native { line-height: 21px; }
+.cl-input-text__native::placeholder { color: var(--core-text-secondary-gray500); opacity: 1; }
+
+.cl-input-text__icon { display: inline-flex; flex: none; width: 18px; height: 18px; color: var(--core-icon-secondary-gray500); }
+.cl-input-text__icon > svg { width: 100%; height: 100%; }
+.cl-input-text__check { display: inline-flex; flex: none; width: 18px; height: 18px; color: var(--core-theme-green-base-500); }
+
+/* Error */
+.cl-input-text--error .cl-input-text__label,
+.cl-input-text--error .cl-input-text__helper { color: var(--core-theme-red-contrast-600); }
+.cl-input-text--error .cl-input-text__control,
+.cl-input-text--error .cl-input-text__control:focus-within {
+  background: var(--inputField-error-surface-red50);
+  border-color: var(--core-interactions-error-red500);
+}
+.cl-input-text--error .cl-input-text__control:focus-within {
+  box-shadow: inset 0 0 0 var(--border-width-width-1) var(--core-interactions-error-red500);
+}
+.cl-input-text--error .cl-input-text__native,
+.cl-input-text--error .cl-input-text__native::placeholder { color: var(--core-theme-red-dark-700); }
+
+/* Disabled */
+.cl-input-text--disabled .cl-input-text__control {
+  background: var(--inputField-disabled-surface);
+  border-color: var(--core-border-primary-gray300);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.cl-input-text--disabled .cl-input-text__native { color: var(--core-text-secondary-gray500); cursor: not-allowed; }

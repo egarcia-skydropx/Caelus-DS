@@ -1,0 +1,15 @@
+.cl-input-timepicker { display: inline-flex; flex-direction: column; gap: var(--space-8); font-family: var(--font-sans); color: var(--core-text-primary-gray900); }
+.cl-input-timepicker__label { font-size: 14px; line-height: 1.5; font-weight: 500; }
+.cl-input-timepicker__anchor { position: relative; }
+.cl-input-timepicker__control { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); box-sizing: border-box; width: 128px; min-height: 42px; margin: 0; padding: calc(var(--space-10) - 1px); border: var(--border-width-width-1) solid var(--core-border-primary-gray300); border-radius: var(--radius-8); background: var(--core-surface-light-white); color: var(--core-text-primary-gray900); font: inherit; font-size: 14px; line-height: 1.5; text-align: left; cursor: pointer; }
+.cl-input-timepicker__control:hover { border-color: var(--core-border-heavy-gray-400); }
+.cl-input-timepicker__control:focus-visible, .cl-input-timepicker__control--open, .cl-input-timepicker__control--open:hover { outline: none; background: var(--core-surface-gray-lighter-50); border-color: var(--core-interactions-active-primary600); box-shadow: inset 0 0 0 1px var(--core-interactions-active-primary600); }
+.cl-input-timepicker__control:disabled { background: var(--core-surface-gray-lighter-50); border-color: var(--core-interactions-disabled-gray400); color: var(--core-text-secondary-gray500); cursor: not-allowed; }
+.cl-input-timepicker__control--empty .cl-input-timepicker__text { color: var(--core-text-secondary-gray500); }
+.cl-input-timepicker__icon { display: inline-flex; flex: none; width: 18px; height: 18px; color: var(--core-icon-secondary-gray500); }
+.cl-input-timepicker__dropdown { position: absolute; top: calc(100% + var(--space-8)); left: 0; z-index: 20; display: flex; gap: var(--space-4); box-sizing: border-box; width: 158px; height: 264px; padding: var(--space-8); border: var(--border-width-width-1) solid var(--core-border-primary-gray300); border-radius: 12px; background: var(--core-surface-light-white); box-shadow: var(--shadow-md); }
+.cl-input-timepicker__col { display: flex; flex-direction: column; gap: var(--space-4); max-height: 100%; overflow-y: auto; }
+.cl-input-timepicker__item { flex: none; width: 45px; height: 32px; margin: 0; padding: 0; border: 0; border-radius: var(--radius-4); background: transparent; color: var(--core-text-primary-gray900); font: inherit; font-size: 14px; line-height: 1.5; cursor: pointer; }
+.cl-input-timepicker__item:hover { background: var(--core-interactions-hover-gray100); }
+.cl-input-timepicker__item:focus-visible { outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600); outline-offset: -2px; }
+.cl-input-timepicker__item--on, .cl-input-timepicker__item--on:hover { background: var(--core-interactions-active-primary600); color: var(--core-text-invert-white); }

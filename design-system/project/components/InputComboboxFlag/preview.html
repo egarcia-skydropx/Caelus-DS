@@ -1,0 +1,20 @@
+<!-- @dsCard group="Forms" height=330 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputComboboxFlag } = window.Caelus;
+  const h = React.createElement;
+  const countries = [
+    { value: 'mx', label: 'México' }, { value: 'us', label: 'Estados Unidos' }, { value: 'es', label: 'España' },
+    { value: 'co', label: 'Colombia' }, { value: 'cl', label: 'Chile' }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputComboboxFlag, { label: 'País de destino', placeholder: 'Selecciona un país', options: countries, defaultOpen: true, defaultInputValue: 'e' }),
+      h('div', { style: { display: 'grid', gap: 24 } },
+        h(InputComboboxFlag, { label: 'País de origen', options: countries, defaultValue: 'mx' }),
+        h(InputComboboxFlag, { label: 'País de destino', size: 'sm', placeholder: 'Selecciona un país', options: countries, error: 'Elige un país.' }))));
+</script>

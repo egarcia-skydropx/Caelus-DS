@@ -1,0 +1,39 @@
+.cl-button-social {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  border: var(--border-width-width-1) solid transparent;
+  border-radius: var(--radius-8);
+  background: var(--white);
+  color: var(--core-gray-900);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.cl-button-social--outline { border-color: var(--core-gray-200); }
+.cl-button-social:hover { background: var(--core-interactions-hover-gray100); }
+.cl-button-social:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--border-width-width-2) var(--core-interactions-active-primary600);
+}
+.cl-button-social:disabled { color: var(--core-interactions-disabled-gray400); cursor: not-allowed; background: var(--white); }
+
+.cl-button-social__icon { display: inline-flex; color: var(--core-gray-900); }
+.cl-button-social__icon > svg { width: 100%; height: 100%; }
+.cl-button-social--facebook .cl-button-social__icon { color: var(--core-social-facebook); }
+.cl-button-social--twitter .cl-button-social__icon { color: var(--core-social-twitter); }
+.cl-button-social--google .cl-button-social__icon { color: var(--core-social-google); }
+.cl-button-social--dribbble .cl-button-social__icon { color: var(--core-social-dribbble); }
+.cl-button-social--github .cl-button-social__icon { color: var(--core-social-github); }
+
+.cl-button-social--xs { padding: 7px 11px 7px 10px; font-size: 12px; line-height: 18px; }
+.cl-button-social--xs .cl-button-social__icon { width: 18px; height: 18px; }
+.cl-button-social--sm { padding: 7px 11px 7px 10px; font-size: 14px; line-height: 21px; }
+.cl-button-social--sm .cl-button-social__icon { width: 20px; height: 20px; }
+.cl-button-social--base { padding: 9px 19px 9px 18px; font-size: 14px; line-height: 21px; }
+.cl-button-social--base .cl-button-social__icon { width: 20px; height: 20px; }
+.cl-button-social--lg { padding: 11px 23px 11px 22px; font-size: 16px; line-height: 24px; }
+.cl-button-social--lg .cl-button-social__icon { width: 24px; height: 24px; }

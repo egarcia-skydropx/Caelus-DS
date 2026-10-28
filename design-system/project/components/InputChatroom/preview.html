@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=249 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 16px; padding: 16px; max-width: 446px; }
+</style>
+<script>
+  const { InputChatroom } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(InputChatroom, { placeholder: 'Escribe tu mensaje a soporte…', onSend: () => {} }),
+      h(InputChatroom, { defaultValue: 'Mi guía 15964 sigue sin movimiento desde ayer.', onSend: () => {} }),
+      h(InputChatroom, { disabled: true, placeholder: 'El ticket está cerrado' })));
+</script>

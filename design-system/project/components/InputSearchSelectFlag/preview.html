@@ -1,0 +1,21 @@
+<!-- @dsCard group="Forms" height=330 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputSearchSelectFlag } = window.Caelus;
+  const h = React.createElement;
+  const countries = [{ value: 'MX', label: 'MX', name: 'México' }, { value: 'US', label: 'US', name: 'Estados Unidos' }, { value: 'CO', label: 'CO', name: 'Colombia' }];
+  const places = [
+    { value: 1, label: 'Entregas mensuales Celaya', saved: true }, { value: 2, label: 'Bodega Centro · 38000', saved: true },
+    { value: 3, label: '38010 · Celaya, Gto.' }, { value: 4, label: '38020 · Celaya, Gto.' }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputSearchSelectFlag, { label: 'Origen', placeholder: 'C. P. o dirección guardada', countries: countries, options: places, defaultOpen: true, defaultInputValue: 'Ce' }),
+      h('div', { style: { display: 'grid', gap: 24 } },
+        h(InputSearchSelectFlag, { label: 'Destino', placeholder: 'C. P. o dirección guardada', countries: countries, options: places, defaultValue: 1 }),
+        h(InputSearchSelectFlag, { label: 'Destino', placeholder: 'C. P. o dirección guardada', countries: countries, options: places, defaultValue: 3, error: 'No hay cobertura en este C. P.' }))));
+</script>

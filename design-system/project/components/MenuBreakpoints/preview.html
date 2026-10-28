@@ -1,0 +1,35 @@
+<!-- @dsCard group="Layout & Menú" height=570 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .frame { height: 488px; margin: 16px; border: 1px solid var(--core-border-secondary-gray200); border-radius: 8px; overflow: hidden; }
+  .frame > div { height: 100%; }
+  .card { background: var(--core-surface-light-white); border: 1px solid var(--core-border-secondary-gray200); border-radius: 8px; padding: 16px; font-size: 14px; color: var(--core-text-primary-gray900); }
+  .card h2 { margin: 0 0 4px; font-size: 18px; }
+  .ph { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--core-text-invert-white); }
+  .ph i { width: 24px; height: 24px; border-radius: 6px; background: currentColor; opacity: .6; }
+  .bar { display: flex; gap: 8px; padding: 0 16px 8px; }
+</style>
+<script>
+  const { MenuBreakpoints, Navbar, Menu, Button } = window.Caelus;
+  const h = React.createElement;
+  const ico = d => h('svg', { viewBox: '0 0 18 18', fill: 'none', stroke: 'currentColor', strokeWidth: 1.4, strokeLinecap: 'round', strokeLinejoin: 'round' }, h('path', { d }));
+  function Demo() {
+    const [overlay, setOverlay] = React.useState(true);
+    const [open, setOpen] = React.useState(true);
+    return h('div', null,
+      h('div', { className: 'frame' }, h(MenuBreakpoints, {
+        layout: overlay ? 'overlay' : 'docked', menuOpen: open, onMenuClose: () => setOpen(false),
+        navbar: h(Navbar, { variant: 'skydropx', type: overlay ? 'mobile' : 'desktop', onMenuClick: () => setOpen(!open), menuExpanded: open,
+          logo: h('span', { className: 'ph' }, h('i'), overlay ? '' : 'Logo'), balance: { label: '$0.00 MXN', addLabel: 'Recargar saldo' }, account: { initials: 'AG' } }),
+        menu: h(Menu, { items: [
+          { id: 'i', label: 'Inicio', icon: ico('M3 8l6-5 6 5v7H3z') },
+          { type: 'label', id: 'l', label: 'Gestión' },
+          { id: 'e', label: 'Mis envíos', icon: ico('M2 5h9v7H2zM11 8h3l2 2v2h-5'), active: true },
+          { id: 'r', label: 'Recolecciones', icon: ico('M3 5.5L9 3l6 2.5v7L9 15l-6-2.5z') }] })
+      }, h('div', { className: 'card' }, h('h2', null, 'Mis envíos'), 'Sigue de cerca tus envíos, consulta y gestiona cada detalle.'))),
+      h('div', { className: 'bar' },
+        Button ? h(Button, { type: 'secondary', size: 'xs', onClick: () => { setOverlay(!overlay); setOpen(false); } }, overlay ? 'Ver menú fijo' : 'Ver menú superpuesto') : null));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

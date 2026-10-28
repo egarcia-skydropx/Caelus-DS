@@ -1,0 +1,17 @@
+<!-- @dsCard group="Progress Bars" height=230 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .col { display: grid; gap: 16px; padding: 16px; max-width: 380px; }
+</style>
+<script>
+  const { ProgressBar } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'col' },
+      h(ProgressBar, { value: 50, leftLabel: 'envios-octubre.csv', rightLabel: '50%', label: 'Carga del archivo de envíos' }),
+      h(ProgressBar, { value: 75, color: 'green', leftLabel: '75 de 100 guías', rightLabel: '75%', label: 'Guías generadas' }),
+      h(ProgressBar, { value: 25, color: 'red', label: 'Envíos con incidencia' }),
+      h(ProgressBar, { value: 100, color: 'dark', label: 'Lote completado' }),
+      h(ProgressBar, { indeterminate: true, label: 'Cargando datos del cliente' })));
+</script>

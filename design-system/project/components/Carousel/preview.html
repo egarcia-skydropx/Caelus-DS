@@ -1,0 +1,19 @@
+<!-- @dsCard group="Carousel" height=674 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 28px; padding: 16px; max-width: 736px; }
+  .slide { height: 150px; display: flex; align-items: center; justify-content: center; background: var(--core-surface-gray-light-100); color: var(--core-text-primary-gray900); font-size: 14px; font-weight: 500; }
+  .tall { height: 220px; }
+</style>
+<script>
+  const { Carousel } = window.Caelus;
+  const h = React.createElement;
+  const names = ['Envíos nacionales', 'Recolección a domicilio', 'Seguro de envío', 'Link de pedido', 'Etiquetas en lote'];
+  const slides = (cls) => names.map((n) => h('div', { key: n, className: 'slide ' + (cls || '') }, n));
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(Carousel, { 'aria-label': 'Beneficios' }, slides()),
+      h(Carousel, { indicators: 'below', 'aria-label': 'Promociones' }, slides()),
+      h(Carousel, { view: 'mobile', indicators: 'overlay', 'aria-label': 'Banners' }, slides('tall'))));
+</script>

@@ -1,0 +1,18 @@
+<!-- @dsCard group="Tooltips" height=300 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; padding: 16px; align-items: center; }
+</style>
+<script>
+  const { Tooltip } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(Tooltip, { position: 'top', id: 'tt-1' }, 'Descargar guía'),
+      h(Tooltip, { position: 'bottom' }, 'Copiar número de rastreo'),
+      h(Tooltip, { position: 'left' }, 'Editar envío'),
+      h(Tooltip, { position: 'right' }, 'Eliminar orden'),
+      h(Tooltip, { position: 'top', title: 'Peso volumétrico' }, 'Se calcula con largo × ancho × alto ÷ 5000.'),
+      h(Tooltip, { position: 'right', title: 'Cobertura' }, 'Esta paquetería entrega en tu código postal.')));
+</script>

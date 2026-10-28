@@ -1,0 +1,22 @@
+<!-- @dsCard group="Cards" height=620 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-gray-lighter-50); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardPaqueteriaDetalles } = window.Caelus;
+  const h = React.createElement;
+  const data = {
+    title: 'Características de FedEx',
+    description: 'Conoce las opciones que te ofrece esta paquetería para crear tus envíos.',
+    recolecciones: h('div', null, h('strong', null, 'Número de paquetes:'), h('ul', null, h('li', null, 'Máximo 40')), h('strong', null, 'Horarios:'), h('ul', null, h('li', null, 'Lun a vie de 9:00 am a 7:00 pm'), h('li', null, 'Sáb 10:00 am a 2:00 pm'))),
+    sucursal: 'Horario: lunes a viernes de 9:00 am a 2:00 pm.',
+    internacionales: 'Servicio internacional con cargo de impuestos para el destinatario.',
+    impresora: 'No permite impresora térmica.'
+  };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'flex', gap: 16, alignItems: 'flex-start', flexWrap: 'wrap' } },
+      h('div', { style: { width: 407 } }, h(CardPaqueteriaDetalles, data)),
+      h('div', { style: { width: 313 } }, h(CardPaqueteriaDetalles, Object.assign({}, data, { device: 'mobile', collapsible: true })))
+    ));
+</script>

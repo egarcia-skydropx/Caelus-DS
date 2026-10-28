@@ -1,0 +1,2 @@
+.cl-input-search-select .cl-input-combobox__control { gap: var(--space-10); }
+.cl-input-search-select .cl-input-combobox__icon { color: var(--core-icon-secondary-gray500); }

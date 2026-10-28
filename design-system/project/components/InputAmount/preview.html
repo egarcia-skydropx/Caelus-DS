@@ -1,0 +1,20 @@
+<!-- @dsCard group="Forms" height=250 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 240px)); gap: 20px 24px; padding: 16px; }
+</style>
+<script>
+  const { InputAmount } = window.Caelus;
+  const h = React.createElement;
+  const flag = h('svg', { viewBox: '0 0 3 3' },
+    h('rect', { width: 1, height: 3, style: { fill: 'var(--core-theme-green-base-500)' } }),
+    h('rect', { x: 1, width: 1, height: 3, style: { fill: 'var(--core-surface-light-white)' } }),
+    h('rect', { x: 2, width: 1, height: 3, style: { fill: 'var(--core-theme-red-base-500)' } }));
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputAmount, { label: 'Valor declarado', labelInfo: 'Se usa para el seguro del envío', flag, placeholder: '0.00', helperText: 'Sin IVA.' }),
+      h(InputAmount, { label: 'Recarga de saldo', flag, defaultValue: '1,500.00', valid: true, helperText: 'Monto disponible al instante.' }),
+      h(InputAmount, { label: 'Cobro contra entrega', flag, defaultValue: '0', state: 'error', helperText: 'El monto mínimo es $50.' }),
+      h(InputAmount, { label: 'Monto fijo', flag, size: 'sm', currency: 'USD', defaultValue: '25.00', state: 'disabled', helperText: 'Tarifa en dólares.' })));
+</script>

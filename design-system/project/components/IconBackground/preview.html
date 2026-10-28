@@ -1,0 +1,21 @@
+<!-- @dsCard group="Icon background" height=240 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 16px; }
+</style>
+<script>
+  const { IconBackground } = window.Caelus;
+  const h = React.createElement;
+  const truck = h('svg', { viewBox: '0 0 24 24', fill: 'none' },
+    h('path', { d: 'M3 6.5h11v9H3zM14 9.5h4l3 3v3h-7', stroke: 'currentColor', strokeWidth: 1.5, strokeLinejoin: 'round' }),
+    h('circle', { cx: 7, cy: 17.5, r: 1.8, stroke: 'currentColor', strokeWidth: 1.5 }),
+    h('circle', { cx: 17, cy: 17.5, r: 1.8, stroke: 'currentColor', strokeWidth: 1.5 }));
+  const colors = ['green', 'red', 'blue', 'yellow', 'orange', 'purple', 'gray', 'teal', 'secondary', 'indigo', 'pink', 'dark', 'white'];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', null,
+      h('div', { className: 'row' }, colors.map(c => h(IconBackground, { key: c, color: c, size: 'sm', icon: truck }))),
+      h('div', { className: 'row' }, colors.map(c => h(IconBackground, { key: c, color: c, size: 'sm', shape: 'square' }))),
+      h('div', { className: 'row' },
+        ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'].map(s => h(IconBackground, { key: s, size: s, color: 'blue', icon: truck })))));
+</script>

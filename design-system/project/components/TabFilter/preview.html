@@ -1,0 +1,21 @@
+<!-- @dsCard group="Tabs" height=120 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: grid; gap: 16px; padding: 16px; justify-items: start; }
+</style>
+<script>
+  const { TabFilter } = window.Caelus;
+  const h = React.createElement;
+  const bars = h('svg', { viewBox: '0 0 16 16', fill: 'none', stroke: 'currentColor', strokeWidth: 1.4, strokeLinecap: 'round' }, h('path', { d: 'M2.5 4h11M2.5 8h11M2.5 12h11' }));
+  function Demo(p) {
+    const [v, setV] = React.useState(p.start);
+    return h(TabFilter, { 'aria-label': 'Filtrar envíos', value: v, onChange: setV, tabs: [
+      { id: 'todos', label: 'Todos', icon: bars },
+      { id: 'sin-guia', label: 'Sin descargar guía', icon: bars },
+      { id: 'incidencia', label: 'Con incidencia', icon: bars }
+    ] });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' }, h(Demo, { start: 'todos' }), h(Demo, { start: 'incidencia' })));
+</script>

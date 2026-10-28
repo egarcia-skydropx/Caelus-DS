@@ -1,0 +1,17 @@
+<!-- @dsCard group="Drawer" height=380 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: grid; gap: 20px; padding: 16px; max-width: 540px; }
+</style>
+<script>
+  const { StatusRecord } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(StatusRecord, { status: 'recolectado' }),
+      h(StatusRecord, { status: 'entregado' }),
+      h(StatusRecord, { status: 'incidencia' }),
+      h(StatusRecord, { status: 'en-devolucion' }),
+      h('div', { style: { maxWidth: 312 } }, h(StatusRecord, { status: 'en-camino', size: 'mobile' }))));
+</script>

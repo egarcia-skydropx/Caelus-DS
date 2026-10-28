@@ -1,0 +1,14 @@
+<!-- @dsCard group="Cards" height=290 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-light-white); font-family: var(--font-sans); }
+</style>
+<script>
+  const { CardOrigen } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12, maxWidth: 554 } },
+      h(CardOrigen, { name: 'Mi tiendita | Dalia Martínez', address: '53 E 1001, Casa amarilla | CP 97302 - Las Américas | Mérida, Yucatán, México', phone: '3014282110', email: 'dalia.martinez@skydropx.com' }),
+      h(CardOrigen, { defaultOpen: false, name: 'Bodega principal' })
+    ));
+</script>

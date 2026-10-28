@@ -1,0 +1,25 @@
+<!-- @dsCard group="Dropdowns" height=260 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { padding: 16px; width: 300px; }
+  .flag { display: block; width: 100%; height: 100%; }
+</style>
+<script>
+  const { DropdownLogos } = window.Caelus;
+  const h = React.createElement;
+  // Neutral placeholders: two- or three-band blocks, not real flags.
+  const flag = (a, b, c) => h('svg', { className: 'flag', viewBox: '0 0 30 21' },
+    h('rect', { width: 10, height: 21, x: 0, fill: a }), h('rect', { width: 10, height: 21, x: 10, fill: b }), h('rect', { width: 10, height: 21, x: 20, fill: c }));
+  function Demo() {
+    const [v, setV] = React.useState('mx');
+    const items = [
+      { value: 'mx', label: 'México', logo: flag('var(--core-theme-green-base-500)', 'var(--core-surface-light-white)', 'var(--core-theme-red-contrast-600)') },
+      { value: 'co', label: 'Colombia', logo: flag('var(--core-theme-yellow-base-500)', 'var(--core-theme-blue-contrast-600)', 'var(--core-theme-red-contrast-600)') },
+      { value: 'us', label: 'Estados Unidos', helper: 'Solo envíos internacionales', logo: flag('var(--core-theme-blue-contrast-600)', 'var(--core-surface-light-white)', 'var(--core-theme-red-contrast-600)') },
+      { value: 'pe', label: 'Perú', disabled: true, logo: flag('var(--core-theme-red-contrast-600)', 'var(--core-surface-light-white)', 'var(--core-theme-red-contrast-600)') }
+    ].map(i => Object.assign({}, i, { selected: i.value === v }));
+    return h('div', { className: 'wrap' }, h(DropdownLogos, { 'aria-label': 'País de origen', items, onSelect: i => setV(i.value) }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

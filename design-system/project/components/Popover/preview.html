@@ -1,0 +1,17 @@
+<!-- @dsCard group="Popovers" height=480 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: flex; flex-wrap: wrap; gap: 28px; padding: 20px; align-items: flex-start; }
+</style>
+<script>
+  const { Popover } = window.Caelus;
+  const h = React.createElement;
+  const body = 'El costo incluye la tarifa de la paquetería, el seguro opcional y los cargos por zona extendida.';
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(Popover, { position: 'top-center', header: 'Cálculo de la tarifa', link: { label: 'Más información aquí', href: '#', external: true } }, body),
+      h(Popover, { position: 'right-center', header: 'Zona extendida', onClose: () => {} }, 'Este código postal tiene un cargo extra de entrega.'),
+      h(Popover, { position: 'bottom-left', header: 'Guía prepagada' }, 'Tienes 12 guías disponibles para esta paquetería.'),
+      h(Popover, { position: 'left-top' }, 'El seguro cubre hasta $10,000 MXN por envío.')));
+</script>

@@ -1,0 +1,18 @@
+<!-- @dsCard group="Chat" height=620 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { padding: 16px; max-width: 788px; }
+</style>
+<script>
+  const { Chat } = window.Caelus;
+  const h = React.createElement;
+  const actions = [{ label: 'Responder' }, { label: 'Reenviar' }, { label: 'Copiar' }, { label: 'Eliminar' }];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(Chat, { 'aria-label': 'Conversación con soporte', messages: [
+        { id: 1, from: 'agent', author: 'Skydropx', time: '11:46', text: 'Hola, revisamos tu envío con guía 7845 1203 9921: está en tránsito y llega mañana.', status: 'Entregado', actions },
+        { id: 2, from: 'client', author: 'Miguel García', time: '11:48', text: '¡Gracias! ¿Me pueden mandar el comprobante?', status: 'Entregado', actions },
+        { id: 3, from: 'agent', author: 'Skydropx', time: '11:50', attachment: { name: 'Comprobante.pdf', meta: '1 página · 180 KB · PDF' }, status: 'Entregado', actions }
+      ] })));
+</script>

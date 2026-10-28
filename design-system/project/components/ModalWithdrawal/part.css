@@ -1,0 +1,70 @@
+.cl-modal-withdrawal__body { display: flex; flex-direction: column; gap: var(--space-16); font-family: var(--font-sans); }
+.cl-modal-withdrawal__intro {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--core-gray-900);
+}
+.cl-modal-withdrawal__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-24);
+}
+.cl-modal-withdrawal__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-32) var(--space-16) var(--space-16);
+  overflow: hidden;
+  background: var(--core-theme-light-white);
+  border: var(--border-width-width-1) solid var(--core-theme-purple-lighter-200);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow);
+}
+.cl-modal-withdrawal__band {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: var(--core-theme-primary-base-500);
+}
+.cl-modal-withdrawal__card--teal .cl-modal-withdrawal__band { background: var(--core-theme-teal-medium-400); }
+.cl-modal-withdrawal__card-body { display: flex; flex-direction: column; align-items: center; gap: var(--space-16); }
+.cl-modal-withdrawal__illustration { display: flex; justify-content: center; height: 48px; }
+.cl-modal-withdrawal__head { display: flex; flex-direction: column; gap: var(--space-8); width: 100%; }
+.cl-modal-withdrawal__card-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--core-theme-primary-dark-700);
+}
+.cl-modal-withdrawal__card--teal .cl-modal-withdrawal__card-title { color: var(--core-theme-teal-dark-700); }
+.cl-modal-withdrawal__card-desc {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--core-text-secondary-gray500);
+}
+.cl-modal-withdrawal__benefits {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: var(--space-8) var(--space-8) var(--space-8) 30px;
+  border: var(--border-width-width-1) solid var(--core-theme-purple-lighter-200);
+  border-radius: var(--radius-6);
+  background: var(--core-surface-purple-lighter-50);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--core-theme-purple-darkest-800);
+}
+.cl-modal-withdrawal__card--teal .cl-modal-withdrawal__benefits {
+  border-color: var(--core-theme-teal-lighter-200);
+  background: var(--core-surface-teal-lighter-50);
+  color: var(--core-theme-teal-contrast-600);
+}
+.cl-modal-withdrawal__action { display: flex; justify-content: flex-end; }

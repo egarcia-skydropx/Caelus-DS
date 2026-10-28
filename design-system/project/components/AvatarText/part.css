@@ -1,0 +1,20 @@
+.cl-avatar-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  line-height: 1;
+}
+.cl-avatar-text__text { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.cl-avatar-text__title { color: var(--core-gray-900); font-weight: 600; font-size: 14px; }
+.cl-avatar-text__desc { color: var(--core-gray-500); font-weight: 400; font-size: 12px; }
+
+.cl-avatar-text--sm .cl-avatar-text__title { font-size: 12px; }
+.cl-avatar-text--md { gap: var(--space-12); }
+.cl-avatar-text--md .cl-avatar-text__text { gap: var(--space-6); }
+.cl-avatar-text--md .cl-avatar-text__title { font-size: 16px; }
+.cl-avatar-text--md .cl-avatar-text__desc { font-size: 14px; }
+.cl-avatar-text--lg { gap: var(--space-16); }
+.cl-avatar-text--lg .cl-avatar-text__text { gap: var(--space-8); }
+.cl-avatar-text--lg .cl-avatar-text__title { font-size: 30px; }
+.cl-avatar-text--lg .cl-avatar-text__desc { font-size: 24px; }

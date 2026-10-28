@@ -1,0 +1,24 @@
+<!-- @dsCard group="Forms" height=394 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputMultiselect } = window.Caelus;
+  const h = React.createElement;
+  const opts = [
+    { value: 'est', label: 'Estafeta', group: 'Nacional' },
+    { value: 'dhl', label: 'DHL Express', group: 'Nacional' },
+    { value: 'fdx', label: 'FedEx', group: 'Nacional' },
+    { value: 'ups', label: 'UPS', group: 'Internacional' },
+    { value: 'pqx', label: 'Paquetexpress', group: 'Internacional' }
+  ];
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputMultiselect, { label: 'Paqueterías', info: 'Elige una o varias', placeholder: 'Selecciona paqueterías', options: opts, defaultValue: ['est', 'dhl'], defaultOpen: true }),
+      h('div', { style: { display: 'grid', gap: 24 } },
+        h(InputMultiselect, { label: 'Paqueterías', placeholder: 'Selecciona paqueterías', options: opts, helperText: 'Se mostrarán en el cotizador.' }),
+        h(InputMultiselect, { label: 'Paqueterías', size: 'sm', options: opts, defaultValue: ['ups'], error: 'Selecciona al menos dos.' }),
+        h(InputMultiselect, { label: 'Paqueterías', options: opts, defaultValue: ['fdx'], disabled: true }))));
+</script>

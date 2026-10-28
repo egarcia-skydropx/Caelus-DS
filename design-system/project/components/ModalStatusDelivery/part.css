@@ -1,0 +1,61 @@
+.cl-modal-status-delivery .cl-modal-status-delivery__content { padding: var(--space-16) var(--space-24); }
+.cl-modal-status-delivery__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-16);
+  font-family: var(--font-sans);
+}
+.cl-modal-status-delivery__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+.cl-modal-status-delivery__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  --cl-msd-bg: var(--core-indigo-100);
+  --cl-msd-fg: var(--core-indigo-500);
+}
+.cl-modal-status-delivery__item + .cl-modal-status-delivery__item { margin-top: var(--space-16); }
+.cl-modal-status-delivery__item + .cl-modal-status-delivery__item::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 12px;
+  width: 1px;
+  height: 16px;
+  background: var(--core-gray-200);
+}
+.cl-modal-status-delivery__item--blue { --cl-msd-bg: var(--core-blue-100); --cl-msd-fg: var(--core-blue-500); }
+.cl-modal-status-delivery__item--primary { --cl-msd-bg: var(--core-surface-purple-light-100); --cl-msd-fg: var(--core-primary-500); }
+.cl-modal-status-delivery__item--green { --cl-msd-bg: var(--core-surface-green-light-100); --cl-msd-fg: var(--core-green-500); }
+.cl-modal-status-delivery__item--red { --cl-msd-bg: var(--core-surface-red-light-100); --cl-msd-fg: var(--core-red-500); }
+.cl-modal-status-delivery__item--orange { --cl-msd-bg: var(--core-orange-100); --cl-msd-fg: var(--core-orange-500); }
+.cl-modal-status-delivery__dot {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--cl-msd-bg);
+}
+.cl-modal-status-delivery__dot > span {
+  width: 19px;
+  height: 19px;
+  border-radius: var(--radius-full);
+  background: var(--cl-msd-fg);
+}
+.cl-modal-status-delivery__text { display: flex; flex-direction: column; }
+.cl-modal-status-delivery__label {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--core-gray-900);
+}
+.cl-modal-status-delivery__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--core-gray-500);
+}

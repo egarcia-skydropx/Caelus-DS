@@ -1,0 +1,73 @@
+.cl-status-record {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-sans);
+}
+.cl-status-record__step {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+  --cl-sr-bg: var(--core-surface-gray-light-100);
+  --cl-sr-icon: var(--core-theme-gray-base-500);
+  --cl-sr-text: var(--core-text-secondary-gray500);
+}
+.cl-status-record__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: calc(50% + 16px);
+  right: calc(-50% + 16px);
+  height: 1px;
+  background: var(--core-border-primary-gray300);
+}
+.cl-status-record__step--line-on:not(:last-child)::after { background: var(--core-theme-indigo-contrast-600); }
+.cl-status-record__step--done {
+  --cl-sr-bg: var(--core-surface-indigo-light-100);
+  --cl-sr-icon: var(--core-theme-indigo-contrast-600);
+  --cl-sr-text: var(--core-theme-indigo-darkest-800);
+}
+.cl-status-record__step--success {
+  --cl-sr-bg: var(--core-surface-green-light-100);
+  --cl-sr-icon: var(--core-theme-green-base-500);
+  --cl-sr-text: var(--core-theme-green-contrast-600);
+}
+.cl-status-record__step--error {
+  --cl-sr-bg: var(--core-surface-red-light-100);
+  --cl-sr-icon: var(--core-theme-red-contrast-600);
+  --cl-sr-text: var(--core-theme-red-contrast-600);
+}
+.cl-status-record__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--cl-sr-bg);
+  color: var(--cl-sr-icon);
+}
+.cl-status-record__label {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+  color: var(--cl-sr-text);
+}
+.cl-status-record__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.cl-status-record--mobile .cl-status-record__step { gap: var(--space-4); }
+.cl-status-record--mobile .cl-status-record__icon { width: 24px; height: 24px; }
+.cl-status-record--mobile .cl-status-record__step:not(:last-child)::after { top: 12px; left: calc(50% + 12px); right: calc(-50% + 12px); }
+.cl-status-record--mobile .cl-status-record__label { font-size: 12px; line-height: 1.25; }

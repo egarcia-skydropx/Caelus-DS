@@ -1,0 +1,33 @@
+<!-- @dsCard group="Pagination" height=323 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: grid; gap: 16px; padding: 16px; }
+  .mob { max-width: 360px; }
+</style>
+<script>
+  const { Pagination, Button } = window.Caelus;
+  const h = React.createElement;
+  const ico = d => h('svg', { viewBox: '0 0 18 18', fill: 'none', stroke: 'currentColor', strokeWidth: 1.4, strokeLinecap: 'round', strokeLinejoin: 'round' }, h('path', { d }));
+  function Demo(p) {
+    const [page, setPage] = React.useState(1);
+    const [sel, setSel] = React.useState(p.sel);
+    const has = sel !== 'none';
+    return h(Pagination, {
+      page, total: 50, onPageChange: setPage, selection: sel, breakpoint: p.bp,
+      onSelectAllChange: c => setSel(c ? 'all' : 'none'),
+      actions: [
+        h(Button, { key: 'e', type: 'tertiary', shape: 'square', size: 'sm', disabled: !has, icon: ico('M5 2.5h5l3 3v10H5zM9 8v5m0 0l-2-2m2 2l2-2'), 'aria-label': 'Exportar envíos' }),
+        h(Button, { key: 'd', type: 'tertiary', shape: 'square', size: 'sm', disabled: !has, icon: ico('M9 3v8m0 0l-3-3m3 3l3-3M3.5 13.5h11'), 'aria-label': 'Descargar guías' })
+      ],
+      selectionText: sel === 'all' ? '20 envíos seleccionados.' : '10 envíos seleccionados de 50.',
+      selectionAction: sel === 'all' ? { label: 'Anular selección', onClick: () => setSel('none') } : { label: 'Incluir todos los envíos', onClick: () => setSel('all') },
+      onSortClick: () => {}, sortLabel: 'Ordenar por fecha', onMoreClick: () => {}
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(Demo, { sel: 'none', bp: 'desktop' }),
+      h(Demo, { sel: 'partial', bp: 'desktop' }),
+      h('div', { className: 'mob' }, h(Demo, { sel: 'all', bp: 'mobile' }))));
+</script>

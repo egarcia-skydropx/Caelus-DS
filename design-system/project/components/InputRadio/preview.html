@@ -1,0 +1,18 @@
+<!-- @dsCard group="Forms" height=170 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  fieldset { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin: 0; padding: 16px; border: 0; }
+  legend { padding: 0 0 8px; font-size: 14px; font-weight: 600; color: var(--core-text-primary-gray900); }
+</style>
+<script>
+  const { InputRadio } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('fieldset', null,
+      h('legend', null, 'Tipo de servicio'),
+      h(InputRadio, { name: 'servicio', value: 'estandar', label: 'Estándar', helperText: '3 a 5 días hábiles.', defaultChecked: true }),
+      h(InputRadio, { name: 'servicio', value: 'express', label: 'Express', helperText: 'Día siguiente.' }),
+      h(InputRadio, { name: 'servicio', value: 'mismo-dia', label: 'Mismo día', helperText: 'No disponible en tu zona.', disabled: true }),
+      h(InputRadio, { name: 'otro', value: 'x', label: 'Ocurre', helperText: 'Definido por la paquetería.', disabled: true, defaultChecked: true })));
+</script>

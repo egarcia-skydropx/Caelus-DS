@@ -1,0 +1,102 @@
+/* ---------- Navbar ---------- */
+.cl-navbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  box-sizing: border-box;
+  min-height: 64px;
+  padding: 0 var(--space-16);
+  border-bottom: var(--border-width-width-1) solid var(--core-border-secondary-gray200);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.cl-navbar--mobile { gap: var(--space-8); }
+.cl-navbar__start { display: flex; align-items: center; gap: var(--space-12); flex: none; }
+.cl-navbar__logo { display: inline-flex; align-items: center; }
+.cl-navbar__links { display: flex; align-items: stretch; align-self: stretch; justify-content: center; gap: var(--space-8); flex: 1 1 auto; }
+.cl-navbar__end { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-8); flex: 1 1 auto; margin-left: auto; }
+.cl-navbar--desktop .cl-navbar__end { gap: var(--space-16); }
+.cl-navbar__links + .cl-navbar__end { flex: none; }
+.cl-navbar__icon { display: inline-flex; width: 18px; height: 18px; flex: none; }
+.cl-navbar__icon--sm { width: 14px; height: 14px; }
+.cl-navbar__icon > svg { width: 100%; height: 100%; }
+.cl-navbar__flag { display: inline-flex; width: 18px; height: 13px; overflow: hidden; border-radius: var(--radius-2); }
+.cl-navbar__flag > svg { width: 100%; height: 100%; }
+.cl-navbar__divider { width: 1px; height: 21px; flex: none; background: var(--core-theme-gray-light-300); }
+.cl-navbar__burger,
+.cl-navbar__tool,
+.cl-navbar__account,
+.cl-navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  border: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cl-navbar__burger { padding: var(--space-4); border-radius: var(--radius-4); background: transparent; }
+.cl-navbar__tool { min-height: 42px; padding: var(--space-8); border-radius: var(--radius-8); }
+.cl-navbar__tool--text { padding: var(--space-10) var(--space-16); }
+.cl-navbar--mobile .cl-navbar__tool--text { padding: var(--space-8) var(--space-12); }
+.cl-navbar__account { padding: var(--space-4); border-radius: 20px; }
+.cl-navbar__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 400;
+  overflow: hidden;
+}
+.cl-navbar__burger:focus-visible,
+.cl-navbar__tool:focus-visible,
+.cl-navbar__account:focus-visible,
+.cl-navbar__link:focus-visible { outline: var(--border-width-width-2) solid var(--toolbarIcon-focus-border); outline-offset: 2px; }
+
+/* Skydropx Pro: dark navbar (Contrast mode of toolbarIcon / buttons) */
+.cl-navbar--skydropx { background: var(--core-theme-primary-primary-900); }
+.cl-navbar--skydropx .cl-navbar__burger { color: var(--core-icon-invert-white); }
+.cl-navbar--skydropx .cl-navbar__tool { background: var(--core-surface-contrast-on-dark); color: var(--core-text-invert-white); }
+.cl-navbar--skydropx .cl-navbar__tool:hover { background: var(--core-theme-indigo-dark-700); }
+.cl-navbar--skydropx .cl-navbar__account { background: var(--core-surface-gray-light-100); color: var(--core-theme-gray-contrast-600); }
+.cl-navbar--skydropx .cl-navbar__burger:focus-visible,
+.cl-navbar--skydropx .cl-navbar__tool:focus-visible,
+.cl-navbar--skydropx .cl-navbar__account:focus-visible { outline-color: var(--core-theme-indigo-light-300); }
+
+/* Soloenvíos and Envíos Internacionales: light navbar */
+.cl-navbar--soloenvios,
+.cl-navbar--internacional { background: var(--core-surface-light-white); }
+.cl-navbar--soloenvios .cl-navbar__burger,
+.cl-navbar--internacional .cl-navbar__burger { color: var(--core-icon-primary-gray900); }
+.cl-navbar--soloenvios .cl-navbar__tool,
+.cl-navbar--internacional .cl-navbar__tool { background: var(--toolbarIcon-default-surface); color: var(--core-text-primary-gray900); }
+.cl-navbar--soloenvios .cl-navbar__tool:hover,
+.cl-navbar--internacional .cl-navbar__tool:hover { background: var(--toolbarIcon-hover-surface); color: var(--toolbarIcon-hover-icon); }
+.cl-navbar--soloenvios .cl-navbar__account,
+.cl-navbar--internacional .cl-navbar__account { background: transparent; color: var(--core-icon-primary-gray900); border-radius: var(--radius-8); }
+.cl-navbar--soloenvios .cl-navbar__avatar,
+.cl-navbar--internacional .cl-navbar__avatar { border-radius: var(--radius-8); background: var(--core-surface-gray-light-100); color: var(--core-text-primary-gray900); }
+
+/* MyShipHub */
+.cl-navbar--msh { min-height: 72px; background: var(--shiphub-layout-header-bg); border-bottom-color: var(--shiphub-layout-header-bg); }
+.cl-navbar--msh .cl-navbar__burger,
+.cl-navbar--msh .cl-navbar__account { background: transparent; color: var(--core-theme-gray-lighter-200); }
+.cl-navbar--msh .cl-navbar__avatar { min-width: 24px; height: 24px; background: var(--core-surface-light-white); color: var(--core-theme-gray-gray-900); }
+.cl-navbar--msh .cl-navbar__tool { background: var(--shiphub-surface-default-dark); color: var(--core-theme-gray-lighter-200); }
+.cl-navbar__link {
+  padding: var(--space-10);
+  background: transparent;
+  color: var(--core-theme-gray-lighter-200);
+  font-weight: 400;
+  border-bottom: var(--border-width-width-2) solid transparent;
+}
+.cl-navbar__link:hover { border-bottom-color: var(--shiphub-palette-600); color: var(--shiphub-palette-600); }
+.cl-navbar__link[aria-current="page"] { border-bottom-color: var(--shiphub-palette-600); color: var(--shiphub-palette-600); font-weight: 600; }

@@ -1,0 +1,55 @@
+/* InputCounter — label/helper from the shared .cl-input-text classes. */
+.cl-input-counter { width: 142px; }
+.cl-input-counter__group {
+  display: flex;
+  box-sizing: border-box;
+  height: 42px;
+  overflow: hidden;
+  border: var(--border-width-width-1) solid var(--core-border-primary-gray300);
+  border-radius: var(--radius-8);
+  background: var(--contador-default-white);
+}
+.cl-input-counter--sm .cl-input-counter__group { height: 37px; }
+.cl-input-counter__btn {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  padding: 0;
+  border: 0;
+  background: var(--core-surface-light-white);
+  color: var(--core-icon-primary-gray900);
+  cursor: pointer;
+}
+.cl-input-counter--sm .cl-input-counter__btn { width: 36px; }
+.cl-input-counter__btn--dec { border-right: var(--border-width-width-1) solid var(--core-border-primary-gray300); }
+.cl-input-counter__btn--inc { border-left: var(--border-width-width-1) solid var(--core-border-primary-gray300); }
+.cl-input-counter__btn:disabled { color: var(--core-icon-secondary-gray500); cursor: not-allowed; }
+.cl-input-counter__native {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0 var(--space-8);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--core-text-primary-gray900);
+}
+
+/* Active / Typing */
+.cl-input-counter__group:focus-within { background: var(--contador-active-gray50); }
+.cl-input-counter__native:focus { box-shadow: inset 0 0 0 var(--border-width-width-1) var(--core-theme-primary-contrast-600); }
+
+/* Error */
+.cl-input-counter--error .cl-input-counter__group { background: var(--contador-error-red50); }
+.cl-input-counter--error .cl-input-counter__native { color: var(--core-theme-red-dark-700); box-shadow: inset 0 0 0 var(--border-width-width-1) var(--core-theme-red-base-500); }
+
+/* Disabled */
+.cl-input-counter--disabled .cl-input-counter__group { background: var(--contador-disabled-surface); }
+.cl-input-counter--disabled .cl-input-counter__btn { background: var(--core-surface-gray-lighter-50); }
+.cl-input-counter--disabled .cl-input-counter__native { color: var(--core-text-secondary-gray500); cursor: not-allowed; }

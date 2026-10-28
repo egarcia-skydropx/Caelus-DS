@@ -1,0 +1,21 @@
+<!-- @dsCard group="Buttons" height=140 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; }
+</style>
+<script>
+  const { ButtonFilter } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', null,
+      h('div', { className: 'row' },
+        h(ButtonFilter, null),
+        h(ButtonFilter, { active: true }, '2 filtros'),
+        h(ButtonFilter, { disabled: true }, '2 filtros')),
+      h('div', { className: 'row' },
+        h(ButtonFilter, { shape: 'circle', 'aria-label': 'Filtrar envíos' }),
+        h(ButtonFilter, { shape: 'square', 'aria-label': 'Filtrar guías' }),
+        h(ButtonFilter, { shape: 'square', active: true, 'aria-label': 'Filtros aplicados' }),
+        h(ButtonFilter, { shape: 'circle', disabled: true, 'aria-label': 'Filtrar' }))));
+</script>

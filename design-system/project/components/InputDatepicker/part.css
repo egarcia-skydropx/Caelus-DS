@@ -1,0 +1,29 @@
+.cl-input-datepicker { display: inline-flex; flex-direction: column; gap: var(--space-8); font-family: var(--font-sans); color: var(--core-text-primary-gray900); }
+.cl-input-datepicker__label { font-size: 14px; line-height: 1.5; font-weight: 500; }
+.cl-input-datepicker__anchor { position: relative; }
+.cl-input-datepicker__control { display: flex; align-items: center; gap: var(--space-8); box-sizing: border-box; width: 100%; min-width: 187px; min-height: 42px; margin: 0; padding: calc(var(--space-12) - 1px) calc(var(--space-16) - 1px); border: var(--border-width-width-1) solid var(--core-border-primary-gray300); border-radius: var(--radius-8); background: var(--core-surface-light-white); color: var(--core-text-primary-gray900); font: inherit; font-size: 14px; line-height: 18px; text-align: left; cursor: pointer; }
+.cl-input-datepicker__control:focus-visible { outline: none; border-color: var(--core-interactions-active-primary600); box-shadow: inset 0 0 0 1px var(--core-interactions-active-primary600); }
+.cl-input-datepicker__control--open, .cl-input-datepicker__control--open:focus-visible { background: var(--select-active-gray50); border-color: var(--core-interactions-active-primary600); box-shadow: inset 0 0 0 1px var(--core-interactions-active-primary600); }
+.cl-input-datepicker__control:disabled { background: var(--select-disabled-surface); color: var(--core-text-secondary-gray500); cursor: not-allowed; }
+.cl-input-datepicker__control--empty .cl-input-datepicker__text { color: var(--core-text-secondary-gray500); }
+.cl-input-datepicker__icon { display: inline-flex; flex: none; width: 18px; height: 18px; color: var(--core-icon-secondary-gray500); }
+.cl-input-datepicker__text { flex: 1 1 auto; white-space: nowrap; }
+.cl-input-datepicker__chevron { display: inline-flex; flex: none; width: 18px; height: 18px; color: var(--core-theme-gray-darkest-800); }
+.cl-input-datepicker__control:disabled .cl-input-datepicker__chevron { color: var(--core-icon-secondary-gray500); }
+.cl-input-datepicker__popover { position: absolute; top: calc(100% + var(--space-8)); left: 0; z-index: 20; display: flex; flex-direction: column; gap: var(--space-8); box-sizing: border-box; width: 284px; padding: var(--space-16); border: var(--border-width-width-1) solid var(--core-border-secondary-gray200); border-radius: var(--radius-8); background: var(--core-surface-light-white); box-shadow: var(--shadow-md); }
+.cl-input-datepicker__header { display: flex; align-items: center; justify-content: space-between; padding: 2px 0; }
+.cl-input-datepicker__nav { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin: 0; padding: 2px; border: var(--border-width-width-1) solid transparent; border-radius: var(--radius-4); background: var(--core-surface-light-white); color: var(--core-text-primary-gray900); cursor: pointer; }
+.cl-input-datepicker__nav:hover { background: var(--core-interactions-hover-gray100); }
+.cl-input-datepicker__nav:focus-visible { outline: none; background: var(--core-interactions-hover-gray100); border-color: var(--core-border-secondary-gray200); }
+.cl-input-datepicker__month { padding: var(--space-6) var(--space-8); font-size: 12px; line-height: 1.5; font-weight: 700; }
+.cl-input-datepicker__grid { display: flex; flex-direction: column; gap: 2px; }
+.cl-input-datepicker__week { display: grid; grid-template-columns: repeat(7, 36px); }
+.cl-input-datepicker__wd { padding: var(--space-8) var(--space-4); font-size: 12px; line-height: 1.5; font-weight: 700; text-align: center; color: var(--core-text-secondary-gray500); }
+.cl-input-datepicker__day { display: block; box-sizing: border-box; width: 36px; height: 34px; margin: 0; padding: var(--space-8) var(--space-4); border: 0; border-radius: var(--radius-8); background: transparent; color: var(--core-text-primary-gray900); font: inherit; font-size: 12px; line-height: 18px; font-weight: 700; text-align: center; cursor: pointer; }
+.cl-input-datepicker__day:hover { background: var(--core-theme-gray-lighter-200); }
+.cl-input-datepicker__day:focus-visible { outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600); outline-offset: -2px; }
+.cl-input-datepicker__day--out { color: var(--core-text-minimal-gray400); }
+.cl-input-datepicker__day--today { box-shadow: inset 0 0 0 1px var(--core-theme-primary-contrast-600); border-radius: var(--radius-6); background: var(--core-surface-primary-lighter-50); }
+.cl-input-datepicker__day--range { border-radius: 0; background: var(--core-surface-gray-light-100); }
+.cl-input-datepicker__day--selected, .cl-input-datepicker__day--selected:hover { background: var(--datepicker-status-day-active); color: var(--core-text-invert-white); box-shadow: none; }
+.cl-input-datepicker__day--edge { border-radius: 0; }

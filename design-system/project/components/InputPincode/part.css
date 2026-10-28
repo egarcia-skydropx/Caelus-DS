@@ -1,0 +1,40 @@
+/* InputPincode — label/helper from the shared .cl-input-text classes. */
+.cl-input-pincode { max-width: 496px; }
+.cl-input-pincode__boxes { display: flex; gap: var(--space-8); }
+.cl-input-pincode__box {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 75px;
+  box-sizing: border-box;
+  height: 42px;
+  margin: 0;
+  padding: 0 var(--space-16);
+  border: var(--border-width-width-1) solid var(--core-border-primary-gray300);
+  border-radius: var(--radius-8);
+  outline: 0;
+  background: var(--core-surface-light-white);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--core-text-primary-gray900);
+}
+.cl-input-pincode__box::placeholder { color: var(--core-text-secondary-gray500); opacity: 1; }
+.cl-input-pincode__box:focus {
+  background: var(--core-surface-gray-lighter-50);
+  border-color: var(--core-interactions-active-primary600);
+  box-shadow: inset 0 0 0 var(--border-width-width-1) var(--core-interactions-active-primary600);
+}
+.cl-input-pincode--error .cl-input-pincode__box,
+.cl-input-pincode--error .cl-input-pincode__box:focus {
+  background: var(--core-surface-red-lighter-50);
+  border-color: var(--core-interactions-error-red500);
+  color: var(--core-theme-red-dark-700);
+}
+.cl-input-pincode--error .cl-input-pincode__box:focus { box-shadow: inset 0 0 0 var(--border-width-width-1) var(--core-interactions-error-red500); }
+.cl-input-pincode--error .cl-input-pincode__box::placeholder { color: var(--core-theme-red-dark-700); }
+.cl-input-pincode--disabled .cl-input-pincode__box {
+  background: var(--inputField-disabled-surface);
+  color: var(--core-text-secondary-gray500);
+  cursor: not-allowed;
+}

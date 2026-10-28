@@ -1,0 +1,81 @@
+.cl-indicator {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  font-family: var(--font-sans);
+}
+
+/* Indicator + text */
+.cl-indicator--dot { gap: var(--space-6); }
+.cl-indicator__dot { width: 12px; height: 12px; flex: none; border-radius: var(--radius-full); }
+.cl-indicator__text { color: var(--core-text-primary-gray900); font-size: 14px; font-weight: 500; line-height: 1; }
+.cl-indicator--blue .cl-indicator__dot { background: var(--indicators-blue-indicator-500); }
+.cl-indicator--gray .cl-indicator__dot { background: var(--indicators-gray-indicator-400); }
+.cl-indicator--green .cl-indicator__dot { background: var(--indicators-green-indicator-500); }
+.cl-indicator--indigo .cl-indicator__dot { background: var(--indicators-indigo-indicator-500); }
+.cl-indicator--orange .cl-indicator__dot { background: var(--indicators-orange-indicator-400); }
+.cl-indicator--primary .cl-indicator__dot { background: var(--indicators-primary-indicator-500); }
+.cl-indicator--red .cl-indicator__dot { background: var(--indicators-red-indicator-500); }
+.cl-indicator--yellow .cl-indicator__dot { background: var(--indicators-yellow-indicator-300); }
+
+/* Contador alert / Contador indicador */
+.cl-indicator--alert,
+.cl-indicator--counter {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 var(--space-4);
+  border: var(--border-width-width-2) solid var(--core-theme-light-white);
+  border-radius: var(--radius-full);
+  color: var(--core-text-invert-white);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+.cl-indicator--alert { background: var(--core-theme-red-base-500); }
+.cl-indicator--counter { background: var(--core-icon-contrast-primary600); }
+
+/* Indicator & Icon */
+.cl-indicator--icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--core-primary-600);
+  color: var(--white);
+}
+.cl-indicator__icon { display: inline-flex; width: 16px; height: 16px; }
+.cl-indicator__icon > svg { width: 100%; height: 100%; }
+
+/* Stepper indicator */
+.cl-indicator--stepper { width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--core-primary-200); }
+.cl-indicator__inner { width: 12px; height: 12px; border-radius: var(--radius-full); background: var(--core-primary-600); }
+
+/* Charge indicator */
+.cl-indicator--charge {
+  gap: var(--space-8);
+  padding: 2px var(--space-10);
+  border-radius: var(--radius-full);
+  background: var(--core-surface-indigo-lighter-50);
+  color: var(--core-theme-indigo-dark-700);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.cl-indicator__spinner {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--core-theme-indigo-lighter-200);
+  border-top-color: var(--core-theme-indigo-contrast-600);
+  border-right-color: var(--core-theme-indigo-contrast-600);
+  border-bottom-color: var(--core-theme-indigo-contrast-600);
+  animation: cl-indicator-spin 0.8s linear infinite;
+}
+@keyframes cl-indicator-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .cl-indicator__spinner { animation: none; }
+}

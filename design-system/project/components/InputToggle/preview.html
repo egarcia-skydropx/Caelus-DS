@@ -1,0 +1,16 @@
+<!-- @dsCard group="Forms" height=140 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; padding: 16px; }
+</style>
+<script>
+  const { InputToggle } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputToggle, { label: 'Notificar al destinatario', helperText: 'Le enviamos el rastreo por correo.' }),
+      h(InputToggle, { label: 'Seguro automático', helperText: 'Se agrega a cada guía.', defaultChecked: true }),
+      h(InputToggle, { label: 'Recolección a domicilio', helperText: 'No disponible en tu zona.', disabled: true }),
+      h(InputToggle, { label: 'Etiqueta térmica', helperText: 'Definido por tu plan.', disabled: true, defaultChecked: true })));
+</script>

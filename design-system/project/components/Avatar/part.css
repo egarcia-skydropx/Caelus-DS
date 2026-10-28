@@ -1,0 +1,73 @@
+.cl-avatar {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1;
+}
+.cl-avatar--circle { border-radius: var(--radius-full); }
+.cl-avatar--rounded { border-radius: var(--radius-4); }
+.cl-avatar--rounded.cl-avatar--placeholder { border-radius: var(--radius-8); }
+.cl-avatar__img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
+.cl-avatar--placeholder { background: var(--core-surface-gray-light-100); color: var(--core-text-primary-gray900); }
+.cl-avatar__sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+.cl-avatar--sm { width: 24px; height: 24px; font-size: 12px; }
+.cl-avatar--regular { width: 32px; height: 32px; font-size: 12px; }
+.cl-avatar--md { width: 48px; height: 48px; font-size: 16px; }
+.cl-avatar--lg { width: 80px; height: 80px; font-size: 30px; }
+.cl-avatar--xl { width: 144px; height: 144px; font-size: 48px; }
+
+/* Notification dot (Figma "Avatar/Notification dot") */
+.cl-avatar__dot {
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: var(--radius-full);
+  background: var(--core-green-400);
+  border: 1.5px solid var(--white);
+}
+.cl-avatar--sm .cl-avatar__dot { width: 10px; height: 10px; }
+.cl-avatar--regular .cl-avatar__dot { width: 12px; height: 12px; }
+.cl-avatar--md .cl-avatar__dot { width: 16px; height: 16px; border-width: var(--border-width-width-2); }
+.cl-avatar--lg .cl-avatar__dot { width: 20px; height: 20px; border-width: var(--border-width-width-2); }
+.cl-avatar--xl .cl-avatar__dot { width: 28px; height: 28px; border-width: var(--border-width-width-3); }
+.cl-avatar--circle.cl-avatar--sm .cl-avatar__dot { top: -1px; right: -3px; }
+.cl-avatar--circle.cl-avatar--regular .cl-avatar__dot { top: -1px; right: -3px; }
+.cl-avatar--circle.cl-avatar--md .cl-avatar__dot { top: 0; right: -4px; }
+.cl-avatar--circle.cl-avatar--lg .cl-avatar__dot { top: 0; right: 2px; }
+.cl-avatar--circle.cl-avatar--xl .cl-avatar__dot { top: 0; right: 14px; }
+.cl-avatar--rounded.cl-avatar--sm .cl-avatar__dot { top: -2px; right: -4px; }
+.cl-avatar--rounded.cl-avatar--regular .cl-avatar__dot { top: -2px; right: -3px; }
+.cl-avatar--rounded.cl-avatar--md .cl-avatar__dot { top: -4px; right: -4px; }
+.cl-avatar--rounded.cl-avatar--lg .cl-avatar__dot { top: -5px; right: -5px; }
+.cl-avatar--rounded.cl-avatar--xl .cl-avatar__dot { top: -8px; right: -8px; }
+
+/* Close button (Figma Type=Close Button): gray dot with an x-mark */
+.cl-avatar__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--core-gray-400);
+  border-width: var(--border-width-width-1);
+  color: var(--core-icon-primary-gray900);
+  cursor: pointer;
+}
+.cl-avatar__remove::before { content: ""; position: absolute; inset: -7px; }
+.cl-avatar__remove:focus-visible { outline: var(--border-width-width-2) solid var(--core-interactions-active-primary600); outline-offset: 1px; }
+
+/* Stacked / With counter */
+.cl-avatar-stack { display: inline-flex; align-items: center; }
+.cl-avatar--stacked { border: var(--border-width-width-1) solid var(--white); }
+.cl-avatar-stack--md .cl-avatar--stacked,
+.cl-avatar-stack--lg .cl-avatar--stacked { border-width: 1.5px; }
+.cl-avatar-stack--sm > * + *,
+.cl-avatar-stack--regular > * + * { margin-left: -8px; }
+.cl-avatar-stack--md > * + *,
+.cl-avatar-stack--lg > * + *,
+.cl-avatar-stack--xl > * + * { margin-left: -16px; }
+.cl-avatar--counter { background: var(--core-gray-900); color: var(--white); }

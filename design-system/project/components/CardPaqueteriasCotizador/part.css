@@ -1,0 +1,48 @@
+.cl-card-paqueterias-cotizador {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: var(--core-surface-light-white);
+  border-radius: var(--radius-8);
+  box-shadow: var(--shadow);
+  font-family: var(--font-sans);
+  color: var(--core-text-primary-gray900);
+  line-height: 1.5;
+  overflow: hidden;
+  width: 100%;
+}
+.cl-card-paqueterias-cotizador__body { display: flex; flex-direction: column; gap: var(--space-8); padding: var(--space-16); }
+.cl-card-paqueterias-cotizador__content { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-24); }
+.cl-card-paqueterias-cotizador__field { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; flex: 0 1 200px; }
+.cl-card-paqueterias-cotizador__label { font-size: 12px; font-weight: 600; color: var(--core-theme-indigo-darkest-800); }
+.cl-card-paqueterias-cotizador__carrier { display: flex; align-items: center; gap: var(--space-8); flex: 0 1 200px; min-width: 0; }
+.cl-card-paqueterias-cotizador__logo { width: 48px; height: 48px; flex: none; border-radius: var(--radius-4); background: var(--core-surface-gray-light-100); overflow: hidden; display: inline-flex; }
+.cl-card-paqueterias-cotizador__stack { display: flex; flex-direction: column; min-width: 0; }
+.cl-card-paqueterias-cotizador__name { font-size: 16px; font-weight: 700; }
+.cl-card-paqueterias-cotizador__service { font-size: 14px; }
+.cl-card-paqueterias-cotizador__pickup { display: inline-flex; align-items: center; gap: var(--space-4); font-size: 12px; font-weight: 600; }
+.cl-card-paqueterias-cotizador__pickup-detail { font-size: 12px; }
+.cl-card-paqueterias-cotizador__tip { display: inline-flex; color: var(--core-text-secondary-gray500); border-radius: var(--radius-full); }
+.cl-card-paqueterias-cotizador__tip:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-card-paqueterias-cotizador__eta { font-size: 18px; font-weight: 500; }
+.cl-card-paqueterias-cotizador__price { font-size: 18px; font-weight: 600; }
+.cl-card-paqueterias-cotizador__price-note { font-size: 12px; color: var(--core-text-secondary-gray500); }
+.cl-card-paqueterias-cotizador__convenio { display: inline-flex; align-items: center; gap: var(--space-4); font-size: 14px; font-weight: 600; color: var(--convenio-palette-600); }
+.cl-card-paqueterias-cotizador__alias { font-size: 14px; color: var(--core-text-minimal-gray400); }
+.cl-card-paqueterias-cotizador__action { flex: none; align-self: center; }
+.cl-card-paqueterias-cotizador__div { border: 0; border-top: var(--border-width-width-1) solid var(--core-theme-gray-lighter-200); margin: 0 calc(-1 * var(--space-16)); }
+.cl-card-paqueterias-cotizador__extras { display: flex; align-items: center; gap: var(--space-8); font-size: 12px; flex-wrap: wrap; }
+.cl-card-paqueterias-cotizador__extras-title { font-weight: 600; padding-right: var(--space-8); border-right: var(--border-width-width-1) solid var(--core-theme-gray-light-300); }
+.cl-card-paqueterias-cotizador__features { display: flex; flex-wrap: wrap; gap: var(--space-8); list-style: none; margin: 0; padding: 0; flex: 1; }
+.cl-card-paqueterias-cotizador__feature { display: inline-flex; align-items: center; gap: var(--space-8); }
+.cl-card-paqueterias-cotizador__feature-icon { width: 20px; height: 20px; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; background: var(--core-surface-purple-light-100); color: var(--core-theme-purple-dark-700); }
+.cl-card-paqueterias-cotizador__automation { display: inline-flex; align-items: center; gap: var(--space-4); font-size: 14px; font-weight: 600; color: var(--core-theme-green-dark-700); }
+.cl-card-paqueterias-cotizador__note { display: flex; align-items: center; gap: var(--space-8); padding: var(--space-8) var(--space-16); font-size: 12px; }
+.cl-card-paqueterias-cotizador__note--no-disponible { background: var(--alerts-default-gray50); color: var(--core-theme-gray-darkest-800); }
+.cl-card-paqueterias-cotizador__note--cargos-extra { background: var(--alerts-info-blue50); color: var(--core-theme-blue-darkest-800); }
+.cl-card-paqueterias-cotizador__note--alerta { background: var(--core-surface-purple-lighter-50); color: var(--core-theme-purple-darkest-800); }
+.cl-card-paqueterias-cotizador--disabled .cl-card-paqueterias-cotizador__logo { opacity: 0.5; filter: grayscale(1); }
+.cl-card-paqueterias-cotizador--mobile .cl-card-paqueterias-cotizador__content { flex-direction: column; align-items: stretch; gap: var(--space-12); }
+.cl-card-paqueterias-cotizador--mobile .cl-card-paqueterias-cotizador__field,
+.cl-card-paqueterias-cotizador--mobile .cl-card-paqueterias-cotizador__carrier { flex: none; }
+.cl-card-paqueterias-cotizador--mobile .cl-card-paqueterias-cotizador__action { align-self: stretch; display: flex; flex-direction: column; }

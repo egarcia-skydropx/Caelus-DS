@@ -1,0 +1,20 @@
+<!-- @dsCard group="Cards" height=501 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-light-white); font-family: var(--font-sans); }
+</style>
+<script>
+  const { ResumenDePago } = window.Caelus;
+  const h = React.createElement;
+  const base = {
+    carrier: { name: 'Fedex Standard Overnight' }, eta: 'Entrega estimada: 2 días',
+    pickup: { title: 'Llevar a sucursal', detail: 'Recolección: mínimo 5 paquetes', tooltip: 'Lleva tus paquetes a una sucursal.' },
+    price: '$150.00'
+  };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'flex-start' } },
+      h('div', { style: { width: 425 } }, h(ResumenDePago, base)),
+      h('div', { style: { width: 425 } }, h(ResumenDePago, Object.assign({}, base, { type: 'convenio', convenioAlias: 'Alias convenio' }))),
+      h('div', { style: { width: 296 } }, h(ResumenDePago, Object.assign({}, base, { breakpoint: 'mobile' })))
+    ));
+</script>

@@ -1,0 +1,38 @@
+<!-- @dsCard group="Drawer" height=1392 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .wrap { display: flex; flex-wrap: wrap; gap: 16px; padding: 16px; align-items: flex-start; }
+  .wrap > * { max-height: 668px; }
+</style>
+<script>
+  const { DrawerHistorial, Alert } = window.Caelus;
+  const h = React.createElement;
+  const fedex = h('span', { style: { display: 'inline-flex', width: 24, height: 24, background: 'var(--core-theme-primary-darkest-800)', color: 'var(--core-text-invert-white)', fontSize: 8, fontWeight: 700, alignItems: 'center', justifyContent: 'center' } }, 'FDX');
+  const base = {
+    onClose: () => {}, carrierName: 'FedEx', onTrack: () => {},
+    events: [
+      { title: 'Llegó al Centro de Distribución FedEx - Cuautitlán', date: 'Lun - 04/sep/23 a las 4:20 pm' },
+      { title: 'Recogido - Mérida, Yucatán', date: 'Lun - 04/sep/23 a las 4:20 pm' },
+      { title: 'Envío creado - Información de envío enviada a FedEx', date: 'Lun - 04/sep/23 a las 4:20 pm' }],
+    details: [
+      { label: 'Paquetería:', value: 'Fedex Standard', icon: fedex },
+      { label: 'Número de rastreo:', value: '#1234567890', tone: 'link' },
+      { label: 'Entrega estimada:', value: '2 días' },
+      { label: 'Creado por:', value: 'Dalia Martínez' }],
+    charges: [
+      { label: 'Envío:', value: '$100.00' }, { label: 'Zona extendida:', value: '$50.00' },
+      { label: 'Rastreo por WhatsApp:', value: '$5.00' }, { label: 'SOS Protección:', value: '$10.00' }],
+    total: { value: '$165.00 MXN' },
+    origin: { name: 'Mi tiendita | Dalia Martínez', address: '53 E 1001, Casa amarilla | CP 97302 - Las Américas | Mérida, Yucatán, México', phone: '3014282110', email: 'dalia.martinez@skydropx.com' },
+    destination: { name: 'Mi tiendita | Dalia Martínez', address: '53 E 1001, Casa amarilla | CP 64000 - La Finca | Monterrey, Nuevo León, México', phone: '3014282110', email: 'dalia.martinez@skydropx.com' },
+    packageInfo: { dimensions: '10 × 10 × 10 cm', weight: '1 kg' }
+  };
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'wrap' },
+      h(DrawerHistorial, Object.assign({}, base, { status: 'incidencia',
+        alert: h(Alert, { color: 'danger' }, 'Incidencia: se presentó un impedimento en el tránsito del envío. Contacta a la paquetería o escríbenos a hola@skydropx.com.') })),
+      h(DrawerHistorial, Object.assign({}, base, { status: 'error-en-creacion', events: [],
+        statusDescription: 'El envío no pudo crearse y tus créditos serán reembolsados.', statusDate: 'Lun - 4 Sep 2023 a las 16:20 h',
+        details: base.details.map(r => r.tone === 'link' ? Object.assign({}, r, { value: 'Error en creación', tone: 'muted' }) : r) }))));
+</script>

@@ -1,0 +1,14 @@
+/* InputBadge — field look comes from the shared .cl-input-text classes. */
+.cl-input-badge__helper { line-height: 1.5; }
+.cl-input-badge__control { align-items: flex-start; }
+.cl-input-badge__control--filled { padding-top: var(--space-10); padding-bottom: var(--space-10); }
+.cl-input-badge__list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+  overflow-y: auto;
+}
+.cl-input-badge__native { flex: 1 1 80px; min-width: 80px; }

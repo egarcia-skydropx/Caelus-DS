@@ -1,0 +1,42 @@
+<!-- @dsCard height=288 -->
+<style>
+  html, body { margin: 0; }
+  body { background: var(--core-surface-light-white); font-family: var(--font-sans); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--core-surface-light-white); }
+  .cover svg { position: absolute; left: 0; top: 0; }
+  .b-primary { fill: var(--core-primary-600); }
+  .b-ink { fill: var(--core-primary-900); }
+  .b-green { fill: var(--brand-green-500); }
+  .b-pink { fill: var(--brand-pink-500); }
+  .b-tint { fill: var(--core-primary-100); }
+  .t { rx: var(--radius-8); }
+  .text { position: absolute; left: 40px; bottom: 40px; max-width: 420px; }
+  .name { margin: 0; font-size: 120px; line-height: .92; font-weight: 700; letter-spacing: -0.02em; color: var(--core-text-primary-gray900); }
+  .tag { margin: 16px 0 0; font-size: 14px; line-height: 1.5; color: var(--core-text-secondary-gray500); }
+</style>
+<div class="cover">
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <!--
+      blocks: core-primary-600 160×216, core-primary-900 104×104, brand-green-500 104×160, brand-pink-500 104×104, core-primary-100 48×216 (+ tiles)
+      arrangement: modular grid from x=512, pitch 56 = space-48 cell + space-8 gutter, 8 cols × 5 rows; primary slab and green slab as tall columns
+      pattern: geometric, modular dense UI → tiles cut by radius-8, some merged two-wide like buttons; Caelus is a dense logistics UI built on 8px corners
+      scales: space-48, space-8, space-16, radius-8; colours follow the brand theme (primary violet / Soloenvíos blue / White label blue)
+    -->
+    <rect class="b-primary t" x="512" y="8" width="160" height="216"/>
+    <rect class="b-ink t" x="680" y="8" width="104" height="104"/>
+    <rect class="b-tint t" x="792" y="8" width="48" height="48"/>
+    <rect class="b-green t" x="848" y="8" width="104" height="160"/>
+    <rect class="b-tint t" x="792" y="64" width="48" height="216"/>
+    <rect class="b-tint t" x="680" y="120" width="48" height="48"/>
+    <rect class="b-tint t" x="736" y="120" width="48" height="48"/>
+    <rect class="b-pink t" x="680" y="176" width="104" height="104"/>
+    <rect class="b-tint t" x="512" y="232" width="104" height="48"/>
+    <rect class="b-tint t" x="624" y="232" width="48" height="48"/>
+    <rect class="b-tint t" x="848" y="176" width="48" height="48"/>
+    <rect class="b-tint t" x="848" y="232" width="104" height="48"/>
+  </svg>
+  <div class="text">
+    <p class="name">Caelus</p>
+    <p class="tag">El sistema de diseño de Skydropx: envíos, rastreo y logística.</p>
+  </div>
+</div>

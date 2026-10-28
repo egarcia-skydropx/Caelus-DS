@@ -1,0 +1,38 @@
+.cl-button-icon {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: var(--space-8);
+  border: 0;
+  border-radius: var(--radius-8);
+  background: transparent;
+  color: var(--core-icon-secondary-gray500);
+  cursor: pointer;
+}
+.cl-button-icon--bg {
+  background: var(--toolbarIcon-default-surface);
+  color: var(--core-icon-contrast-primary600);
+}
+.cl-button-icon__icon { display: inline-flex; width: 24px; height: 24px; }
+.cl-button-icon__icon > svg { width: 100%; height: 100%; }
+.cl-button-icon:hover {
+  background: var(--toolbarIcon-hover-surface);
+  color: var(--core-icon-contrast-primary600);
+}
+.cl-button-icon--active,
+.cl-button-icon:focus-visible {
+  outline: none;
+  background: var(--toolbarIcon-focus-surface);
+  color: var(--core-icon-contrast-primary600);
+  box-shadow: inset 0 0 0 var(--border-width-width-2) var(--toolbarIcon-focus-border);
+}
+.cl-button-icon:disabled {
+  background: transparent;
+  color: var(--core-icon-minimal-gray400);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.cl-button-icon--bg:disabled { background: var(--toolbarIcon-disabled-surface); }

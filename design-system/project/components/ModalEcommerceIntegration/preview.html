@@ -1,0 +1,21 @@
+<!-- @dsCard group="Modals" height=520 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; gap: 16px; padding: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: start; }
+</style>
+<script>
+  const { ModalEcommerceIntegration } = window.Caelus;
+  const h = React.createElement;
+  const logo = (bg, txt) => h('span', { style: { display: 'inline-flex', width: 35, height: 35, borderRadius: 6, background: bg, color: 'var(--core-text-invert-white)', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700 } }, txt);
+  const noop = () => {};
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(ModalEcommerceIntegration, { inline: true, type: 'tienda', title: 'Conecta tu tienda Shopify', onClose: noop,
+        logo: logo('var(--core-green-500)', 'S'), hint: 'El formato de la URL debe ser: https://mitienda.myshopify.com.' }),
+      h(ModalEcommerceIntegration, { inline: true, type: 'api', title: 'Credenciales de aplicación', onClose: noop,
+        logo: logo('var(--core-theme-primary-contrast-600)', 'API'), instructions: 'Copia las claves desde el panel de tu aplicación.',
+        docsHref: '#', fields: [
+          { name: 'apiKey', label: 'Clave del cliente (API Key)', defaultValue: 'ck_038e961d72a8a3d4bf16c6f2844528f90c464184' },
+          { name: 'apiSecret', label: 'Clave secreta del cliente (API Secret Key)', type: 'password', defaultValue: 'secreto-de-prueba' }] })));
+</script>

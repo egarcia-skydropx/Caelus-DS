@@ -1,0 +1,16 @@
+<!-- @dsCard group="Forms" height=463 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputDropfile } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputDropfile, { label: 'Logo de tu tienda', type: 'img', hint: '.ico o .png (máx. 32x32px) 50KB' }),
+      h(InputDropfile, { label: 'Carga masiva de envíos', type: 'file', helperText: 'Usa la plantilla de Skydropx.' }),
+      h(InputDropfile, { label: 'Carga masiva de envíos', type: 'file', status: 'uploading', fileName: 'envios_marzo.xlsx', progress: 60 }),
+      h(InputDropfile, { label: 'Carga masiva de envíos', type: 'file', status: 'value', fileName: 'envios_marzo.xlsx' })));
+</script>

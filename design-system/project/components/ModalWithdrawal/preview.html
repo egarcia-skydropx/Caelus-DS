@@ -1,0 +1,21 @@
+<!-- @dsCard group="Modals" height=613 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+</style>
+<script>
+  const { ModalWithdrawal } = window.Caelus;
+  const h = React.createElement;
+  const coin = (c) => h('svg', { viewBox: '0 0 48 48', width: 48, height: 48, fill: 'none', 'aria-hidden': 'true' },
+    h('rect', { x: 6, y: 12, width: 36, height: 24, rx: 4, fill: c }),
+    h('rect', { x: 6, y: 18, width: 36, height: 4, fill: 'var(--core-theme-light-white)' }));
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16 } },
+      h(ModalWithdrawal, { inline: true, title: 'Retirar saldo', onClose: () => {}, options: [
+        { key: 'creditos', tone: 'primary', illustration: coin('var(--core-theme-primary-base-500)'), title: 'Créditos Skydropx',
+          description: 'Convierte tu dinero en créditos para hacer envíos.',
+          benefits: ['Sin comisiones.', 'Listo para usar de inmediato.', 'No tienen fecha de vencimiento.'], actionLabel: 'Convertir a créditos' },
+        { key: 'cuenta', tone: 'teal', illustration: coin('var(--core-theme-teal-medium-400)'), title: 'Cuenta bancaria',
+          description: 'Recibe el dinero directamente en tu cuenta.',
+          benefits: ['Opción de pago anticipado para tus envíos.', 'Algunos bancos podrían aplicar un costo por la transacción.', 'Transferencias seguras que se reflejan los jueves.'], actionLabel: 'Transferir' }] })));
+</script>

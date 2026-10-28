@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=419 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 24px; padding: 16px; max-width: 348px; }
+</style>
+<script>
+  const { InputBadge } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(InputBadge, { label: 'Guías', placeholder: 'Escribe una guía y presiona Enter', helperText: 'Separa las guías con Enter o coma.' }),
+      h(InputBadge, { label: 'Guías', defaultValues: ['15964', '15965', '15971', '16002', '16010'], helperText: '5 guías seleccionadas.' }),
+      h(InputBadge, { label: 'Códigos postales', state: 'error', placeholder: 'Ej. 06700', helperText: 'Agrega al menos un código postal.' })));
+</script>

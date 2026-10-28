@@ -1,0 +1,14 @@
+<!-- @dsCard group="Forms" height=560 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .stack { display: grid; gap: 24px; padding: 16px; max-width: 480px; }
+</style>
+<script>
+  const { InputTextarea } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'stack' },
+      h(InputTextarea, { label: 'Instrucciones de entrega*', labelInfo: 'Las verá la paquetería', helperText: 'Ej. horario de recepción o referencias del domicilio.', rows: 4 }),
+      h(InputTextarea, { label: 'Detalle de la incidencia*', toolbar: false, rows: 2, state: 'error', defaultValue: 'Llegó', helperText: 'Describe el problema con al menos 20 caracteres.' })));
+</script>

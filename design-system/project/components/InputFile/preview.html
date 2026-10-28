@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=162 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--core-surface-light-white); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px 16px; align-items: start; padding: 16px; }
+</style>
+<script>
+  const { InputFile } = window.Caelus;
+  const h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { className: 'grid' },
+      h(InputFile, { label: 'Comprobante de domicilio', helperText: 'PDF o JPG, máximo 5 MB.' }),
+      h(InputFile, { label: 'Factura del envío', helperText: 'Archivo XML del CFDI.', fileName: 'factura_A1029.xml' }),
+      h(InputFile, { label: 'Comprobante de domicilio', size: 'large', helperText: 'PDF o JPG, máximo 5 MB.' })));
+</script>

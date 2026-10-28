@@ -1,0 +1,18 @@
+<!-- @dsCard group="Cards" height=883 -->
+<div id="root"></div>
+<style>
+  body { margin: 0; background: var(--core-surface-light-white); font-family: var(--font-sans); }
+  .box { padding: 16px; border: 1px solid var(--core-border-secondary-gray200); border-radius: 8px; }
+</style>
+<script>
+  const { CardConvenioContenedor } = window.Caelus;
+  const h = React.createElement;
+  const link = h('a', { href: '#' }, 'crea un reporte');
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h('div', { style: { padding: 16, display: 'grid', gap: 12, maxWidth: 727 } },
+      h('div', { className: 'box' }, h(CardConvenioContenedor, { alias: 'Convenio FedEx Monterrey' })),
+      h('div', { className: 'box' }, h(CardConvenioContenedor, { state: 'intermitencia', message: h('span', null, 'El convenio Convenio FedEx Monterrey presenta fallas al crear envíos; contacta a la paquetería o ', link, ' para asistencia.'), skills: [{ label: 'Cotización' }, { label: 'Creación de envíos', ok: false }, { label: 'Cancelación de envíos' }, { label: 'Recolección' }] })),
+      h('div', { className: 'box' }, h(CardConvenioContenedor, { state: 'error', message: h('span', null, 'No pudimos conectar el convenio. Intenta de nuevo o ', link, ' para recibir ayuda.') })),
+      h('div', { className: 'box' }, h(CardConvenioContenedor, { state: 'empty' }))
+    ));
+</script>

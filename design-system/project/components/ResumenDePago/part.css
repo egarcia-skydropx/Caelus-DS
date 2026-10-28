@@ -1,0 +1,38 @@
+.cl-resumen-de-pago {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-16);
+  background: var(--core-surface-light-white);
+  border: var(--border-width-width-1) solid var(--core-theme-gray-lighter-200);
+  border-radius: var(--radius-8);
+  font-family: var(--font-sans);
+  color: var(--core-text-primary-gray900);
+  line-height: 1.5;
+  width: 100%;
+}
+.cl-resumen-de-pago__carrier { display: flex; align-items: center; gap: var(--space-8); }
+.cl-resumen-de-pago__logo { width: 48px; height: 48px; flex: none; border-radius: var(--radius-4); background: var(--core-surface-gray-light-100); overflow: hidden; display: inline-flex; }
+.cl-resumen-de-pago__stack { display: flex; flex-direction: column; min-width: 0; }
+.cl-resumen-de-pago__name { font-size: 16px; font-weight: 700; }
+.cl-resumen-de-pago__eta { font-size: 14px; }
+.cl-resumen-de-pago__row { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-8); }
+.cl-resumen-de-pago__pickup { display: flex; flex-direction: column; gap: 1px; min-width: 0; font-size: 12px; }
+.cl-resumen-de-pago__label { font-size: 12px; font-weight: 600; color: var(--core-theme-indigo-darkest-800); }
+.cl-resumen-de-pago__pickup-title { display: inline-flex; align-items: center; gap: var(--space-4); font-weight: 600; }
+.cl-resumen-de-pago__tip { display: inline-flex; color: var(--core-text-secondary-gray500); border-radius: var(--radius-full); }
+.cl-resumen-de-pago__tip:focus-visible { outline: 2px solid var(--core-interactions-active-primary600); outline-offset: 2px; }
+.cl-resumen-de-pago__price-block { display: flex; flex-direction: column; flex: none; min-width: 100px; }
+.cl-resumen-de-pago__price { font-size: 18px; font-weight: 700; }
+.cl-resumen-de-pago__convenio { display: inline-flex; align-items: center; gap: var(--space-4); font-size: 14px; font-weight: 600; color: var(--convenio-palette-600); }
+.cl-resumen-de-pago__alias { font-size: 14px; color: var(--core-text-minimal-gray400); }
+.cl-resumen-de-pago__div { width: 100%; border: 0; border-top: var(--border-width-width-1) solid var(--core-theme-gray-lighter-200); margin: 0; }
+.cl-resumen-de-pago__extras { display: flex; align-items: center; gap: var(--space-8); flex-wrap: wrap; font-size: 12px; }
+.cl-resumen-de-pago__extras-title { font-weight: 600; padding-right: var(--space-8); border-right: var(--border-width-width-1) solid var(--core-theme-gray-light-300); }
+.cl-resumen-de-pago__features { display: flex; flex-wrap: wrap; gap: var(--space-8); list-style: none; margin: 0; padding: 0; }
+.cl-resumen-de-pago__feature { display: inline-flex; align-items: center; gap: var(--space-8); }
+.cl-resumen-de-pago__feature-icon { width: 20px; height: 20px; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; background: var(--core-surface-purple-light-100); color: var(--core-theme-purple-dark-700); }
+.cl-resumen-de-pago--mobile .cl-resumen-de-pago__row { flex-direction: column; }
+.cl-resumen-de-pago--mobile .cl-resumen-de-pago__extras { flex-direction: column; align-items: flex-start; }
+.cl-resumen-de-pago--mobile .cl-resumen-de-pago__extras-title { border-right: 0; padding-right: 0; }
